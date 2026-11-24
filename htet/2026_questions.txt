@@ -1,0 +1,60 @@
+91|In modern computer applications like scientific simulations, which characteristic provides the primary advantage over earlier generations?|Fixed-word instruction sets|Multi-core parallel processing|Mechanical reliability only|Magnetic core memory usage|B
+92|Which memory hierarchy level is optimized for holding intermediate ALU results?|L1 cache/On-chip registers|Secondary storage (HDD/SSD)|Virtual memory|ROM|A
+93|Which Intel 8086 innovation enabled 1 MB segmented memory addressing over the 8080?|Pipeline prefetch queue|Harvard architecture|20-bit physical address bus (segment:offset)|Built-in FPU|C
+94|Which milestone enabled transition from assembly to portable high-level code?|FORTRAN (1957) compiler to machine code|Windows OS introduction|1947 transistor invention|USB standard creation|A
+95|ASCII-7 (128 code points) can't represent e/n directly due to? [as printed; probably meant accented letters]|Parity bit requirement|No uppercase support|Insufficient points after control chars (0-31, 127)|Fixed 8-bit only|C
+96|OS function for CPU sharing via context switching & process isolation?|File organization|Memory only|Process scheduling & time slicing|Device buffers|C
+97|Utility function for sector-by-sector data recovery from corrupted FAT without overwriting clusters?|Non-destructive data recovery/scanning|Disk defragmentation|Antivirus scanning|File compression|A
+98|What Cut/Copy/Paste across storage (SSD to network), which Windows clipboard handles format negotiation & large files efficiently?|Drag-and-drop|Ctrl+C/V only|Send To menu|Clipboard History with cloud sync|A
+99|Windows theme syncs accent colors across Start, taskbar, borders, edge?|Transparency toggle|Auto-pick from background + Edge|High contrast only|Windows 7 fallback|B
+100|Insert Σ with limits in Words using native tools?|Insert > Shapes > Callouts|Insert > Symbol > Greek|Insert > Equation > Σ + Script Limits|Home > Font > Subscript|C
+101|WordArt metallic 3D extrusion with glow/shadow for certificates?|3-D Rotation + Bevel + Metal + Custom Glow|Outline + Gradient Fill|Glow + Shadow only|Reflection + Soft Edges|A
+102|Advanced conditional formating using formulas referencing cells outside selection?|Color Scales|Data Bars only|Formula-based w/relative refs|Icon Sets|C
+103|Excel function counting non-empty cells (numbers, text, logical) excluding errors?|COUNTA()|COUNT()|COUNTIF()|COUNTBLANK()|A
+104|In Excel date/time functions, which formula extracts only the time portion from a datetime value while preserving fractional hours (minutes/seconds)|=A1-INT(A1)|=TEXT(A1,"hh:mm:ss")|=MOD(A1,1)|=HOUR(A1)+MINUTE(A1)/60|C
+105|Which advanced range selection technique selects entire contiguous data table using keyboard shortcut while excluding headers and totals?|Ctrl+Shift+Arrow|Ctrl+Shift+Space (Current Region)|Ctrl+A (selects all)|Ctrl+Shift+End|A
+106|MS PowerPoint slide component for visual context & branding consistency?|Slide Master & Layouts|Placeholder text boxes|Outline view|Notes only|A
+107|Slide layout element auto-adjusting text size/wrapping while maintaining hierarchy?|Manual font resize|Static text frames|Autofit in Smart Shape boxes|Outline numbering only|C
+108|ClipArt method preserving vector quality on scaling without pixelation?|PNG transparency|JPEG comprehenssion|SVG w/ SmartArt|Bitmap only|C
+109|Presentation save option for offline editing with cloud sync on reconnect?|Manual save|Offline w/ AutoSave & sync queue|No offline|Online-only|B
+110|C/C++ dynamic memory without bounds checking causes which vulnerability?|Integer overflow|Format string|Buffer overflow → arbitrary code exec|Stack overflow only|C
+111|Implementation metric for scalability under increasing user concurrency?|Throughput (TPS) vs. response time|Lines of code|CPU utilization|Memory footprint|A
+112|Testing phase formal verification proving no division-by-zero/array bounds errors?|Model checking w/ temporal logic|Fuzz testing|Integration testing|Manual review|A
+113|Algorithm property provable by induction regardless of input size?|Effectiveness|Finiteness|Generality|Definiteness|C
+114|Flowchart with multiple reachable STOP symbols violates which algorithm property?|Output definiteness (single result)|Input requirement|Effectiveness|Finiteness|D
+115|Program construct ensuring deterministic execution: each statement processes once in fixed order?|Recurrence|Sequence|Recursion|Selection|B
+116|Requirement Gathering artifact: primary client-dev contract with functional/non-functional reqs & traceability?|SRS document|Use case diagrams only|High-level design|Feasibility report|A
+117|Feasibility Study: Technique quantifying technical feasibility vs SLAs via prototyping/bench marking?|Performance assessment w/ load metrics|Cost-benefit only|Stakeholder analysis|Risk matrix|A
+118|Design principle for minimal module changes via interfaces?|Inheritance|Low coupling w/high cohesion|Data encapsulation only|Cohesion only|B
+119|Coding practice for cross-platform compatibility via consistent API patterns across versions?|Variable naming only|Indentation standards|Defensive prog. w/ version-agnostic APIs & polyfills|Comment density|C
+120|Black Box Testing primarily focuses on:|DB schema|Memory allocation|Program functionality per requirements|Internal code|C
+121|White Box Testing also known as?|Functional|Behavioural|Structural|Acceptance|C
+122|Testing level verifying individual program modules/components?|System|Integration|Unit|Acceptance|C
+123|Python's key feature different from C++?|Compiled before execution|Static memory allocation|Manual memory management|Dynamic typing|D
+124|Python feature of code once, run on Windows/Linux/macOs without changes?|Auto memory mgmt.|Bytecode compilation platform independence|OOP paradigm|Dynamic typing|B
+125|What is the output of print("Age:", 25, sep='-', end='!')?|Age:-25!|Age: 25!|Age:25|Syntax error|A
+126|What is the result of result = 10//3+2**2 following precedence rules?|13|4|7|20|C
+127|The primary need for functions in programming is to achieve:|More variables|Code reusability and modularity|Complex syntax|Faster execution speed|B
+128|For std::string s = "HELLO";, which access method performs bounds checking at runtime and throws an exception if index is invalid?|s[i]|*(&s[0]+i)|*(s.data()+i)|s.at(i)|D
+129|What does s.find('py', 2) return for s = "Happy Python Learning"?|-1|3|6|2|B
+130|Which operation is NOT possible on tuples?|Slicing|Indexing|append()|len()|C
+131|Which method returns the value for a key or a default if key doesn't exist, without modifying the dictionary unlike get() with None default?|d.pop('key', 0)|d.get('key', 0)|d['key']|d.setdefault('key', 0)|B
+132|Data Science lifecycle: phase with feature engineering & model selection via cross-validation?|Evaluation|Data prep|Deployment|Modeling|D
+133|E-commerce recommendation: collaborative filtering using user-item matrices?|Demographic|Matrix Factorization (SVD++)|Rule-based|Content-based|B
+134|5G slicing privacy concern from location/biometric/behavioural data?|Rural connectivity|Surveillance via digital profiling|Lower data costs|Emergency services|B
+135|Hardware for direct Internet without NAT?|8GB RAM|Public IP from ISP|SSD drive|DirectX 12 GPU|B
+136|Browser engine with CSS Grid L2 subgrid for nested alignment?|Blink (Chrome)|Gecko (Firefox)|WebKit (Safari)|EdgeHTML (legacy)|B
+137|TCP/IP layer for reliable end-to-end data delivery with error correction & flow control?|Physical|Application|Transport|Network|C
+138|Access specifier for same class + derived classes only (not outside inheritance)?|Protected|Public|Static|Private|A
+139|Method overriding demonstrates which type of polymorphism?|Compile-time polymorphism|Runtime polymorphism|Static polymorphism|Ad-hoc polymorphism|B
+140|Virtual function via base pointer to derived object?|Program crashes|Base version executes|Derived version (dynamic binding)|Compilation error|C
+141|Abstract classes primarily serve to:|Define interfaces for concrete derived classes|Provide full implementation|Create objects directly|Eliminate inheritance|A
+142|Which keyword is used to achieve runtime polymorphism in C++?|override|virtual|static|final|B
+143|Which C++ array statement is FALSE?|Size: sizeof(arr)/sizeof(arr)|Name = base address|Passed by value to functions|Contiguous memory|C
+144|Output of int arr[] (10,20,30); cout << arr;?|Compile error (out of bounds)|Garbage value|40 (next value)|0 (auto-initialized)|None
+145|C++ operator: higher precedence than * but lower than postfix ++?|&&|unary &|==|+|B
+146|Local class object destructor called when?|Function scope exit|Program end|Object creation|Constructor call|A
+147|When a destructor is not explicitly defined in a class, compiler generates a ______ destructor.|Private|Default public|Virtual|Inline public|B
+148|Which declaration inside a class makes a member function accessible without creating class object?|friend void func();|public: static void func();|private: static void func();|virtual void func();|B
+149|Passing entire Student struct to function: value vs reference-which has higher overhead & why?|Both same|Reference; copies pointer (4/8 bytes)|Value; copies entire struct (sizeof(Student) bytes)|Compiler optimization|C
+150|~Class () {} destructor cannot be ______ for proper inheritance cleanup. [~ appears in the Hindi column only]|Virtual|Inline|Static|Private|A

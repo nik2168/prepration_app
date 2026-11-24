@@ -1,0 +1,19 @@
+// Small building blocks used by every screen
+const $=s=>document.querySelector(s),esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const IC={mock:'<rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h3"/>',prog:'<path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/>',rep:'<circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5" fill="currentColor"/>',set:'<path d="M12 3v12M7 10l5 5 5-5M4 20h16"/>',dn:'<path d="m6 9 6 6 6-6"/>',grid:'<rect x="4" y="4" width="6" height="6" rx="3"/><rect x="14" y="4" width="6" height="6" rx="3"/><rect x="4" y="14" width="6" height="6" rx="3"/><rect x="14" y="14" width="6" height="6" rx="3"/>'};
+const icon=k=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${IC[k]}</svg>`;
+const btn=(l,act,v='',c='',dis)=>`<button type="button" class="btn ${c}" data-act="${act}" data-v="${esc(v)}" ${dis?'disabled':''}>${l}</button>`;
+const opt=(o,v)=>`<option value="${esc(o[0])}" ${String(o[0])===String(v)?'selected':''}>${esc(o[1])}</option>`;
+// o: [value,label] items, or {g:'Group',o:[...]} groups
+const select=(id,label,o,v,cls='')=>`<label class="fld ${cls}">${label}<select id="${id}" data-sel="${id}"><button type="button"><selectedcontent></selectedcontent></button>${o.map(x=>x.g?`<optgroup label="${esc(x.g)}">${x.o.map(y=>opt(y,v)).join('')}</optgroup>`:opt(x,v)).join('')}</select></label>`;
+const pick=(cls,act,o,v,lab)=>`<div class="${cls}" role="group" aria-label="${lab}">${o.map(([k,n])=>`<button type="button" data-act="${act}" data-v="${k}" aria-pressed="${k===v}">${n}</button>`).join('')}</div>`;
+const bar=(p,wk)=>`<div class="bar ${wk?'wk':''}"><i style="width:${Math.max(0,Math.min(100,p))}%"></i></div>`;
+const ring=(p,z=58)=>{const r=24,c=2*Math.PI*r;return `<svg width="${z}" height="${z}" viewBox="0 0 58 58" role="img" aria-label="${p==null?'Not attempted':'Best '+pc(p)}" style="flex:none"><circle cx="29" cy="29" r="${r}" fill="none" stroke="var(--sky)" stroke-width="6"/>${p==null?'':`<circle cx="29" cy="29" r="${r}" fill="none" stroke="var(--pri)" stroke-width="6" stroke-linecap="round" stroke-dasharray="${c*p/100} ${c}" transform="rotate(-90 29 29)"/>`}<text x="29" y="33.5" text-anchor="middle" font-size="13" font-weight="600" fill="var(--ink)">${p==null?'–':Math.round(p)}</text></svg>`};
+// OMR bubble whose size shows marks
+const bub=(n,max,na)=>na?'<span class="b na" aria-label="not available">–</span>':n?(d=>`<span class="b" style="width:${d}px;height:${d}px">${n}</span>`)(Math.round(22+22*Math.sqrt(n/max))):'<span class="b z" aria-label="0"></span>';
+const fmt=s=>{s=Math.max(0,s|0);return (s>=3600?(s/3600|0)+':':'')+String((s/60|0)%60).padStart(2,'0')+':'+String(s%60).padStart(2,'0')};
+const shuf=a=>{a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.random()*(i+1)|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+function sheet(h){const d=$('#dlg');d.oncancel=null;d.onclick=e=>{if(e.target===d||e.target.closest('[data-close]'))d.close()};d.innerHTML=h;if(!d.open)d.showModal();d.scrollTop=0}
+function ask(msg,bs){return new Promise(r=>{const d=$('#dlg');if(d.open)d.close();d.innerHTML=`<h2 style="margin-bottom:18px">${esc(msg)}</h2><div class="row">${bs.map((b,i)=>`<button type="button" class="btn ${b[1]||'l'} grow" data-i="${i}">${esc(b[0])}</button>`).join('')}</div>`;d.onclick=e=>{const b=e.target.closest('[data-i]');if(b){d.close();r(+b.dataset.i)}};d.oncancel=()=>r(-1);d.showModal()})}
+const CSAREAS=Object.keys(D.subj).filter(isCS),OTHERS=Object.keys(D.subj).filter(s=>!isCS(s));
+const subjOpts=all=>[...all,{g:'Computer Science areas',o:CSAREAS.map(s=>[s,sn(s)])},{g:'Other subjects',o:OTHERS.map(s=>[s,sn(s)])}];

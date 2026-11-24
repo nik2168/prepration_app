@@ -1,0 +1,407 @@
+{
+ "2023_2": {
+  "s": "Which of the following statement is [[correct]] regarding adolescence, under Erikson's Psycho-social development theory ?",
+  "o": [
+   "Ego-identity is a positive psycho-social aspect.",
+   "Ego-identity is a negative psycho-social aspect.",
+   "Ego-identity is a neutral psycho-social aspect.",
+   "Ego-identity is not just a psycho-social aspect."
+  ]
+ },
+ "2023_6": {
+  "s": "If a learner does not achieved the expected performance, what type of testing is done to find out the reason ?",
+  "o": [
+   "Formative",
+   "Diagnostic",
+   "Remedial",
+   "Summative"
+  ]
+ },
+ "2023_7": {
+  "s": "\"Inclusion is not confined to the disabled but it also mean no exclusion of any child.\" This meaning of inclusion in education has been clarified by :",
+  "o": [
+   "NCF 2005",
+   "NCERT",
+   "UNESCO",
+   "UNICEF"
+  ]
+ },
+ "2023_9": {
+  "s": "Which of the following statements does [[not]] explain the positive impact of motivation on learning ?",
+  "o": [
+   "Motivation impairs learning behaviour",
+   "Motivation provide definite direction to learning behaviour",
+   "Motivation energizes learning behaviour",
+   "Motivation makes learning behaviour selective"
+  ]
+ },
+ "2023_10": {
+  "s": "Match the stages of morality with their level, under the Moral Development theory of Kohlberg :\nStages of Morality | Level of Morality\n(a) Good interpersonal relations | I\n(b) Individualism and exchange | II\n(c) Social contracts and individual rights | III\n(d) Universal principles\nChoose the [[correct]] code :\nCode : (a) (b) (c) (d)",
+  "o": [
+   "I III II I",
+   "III II III I",
+   "II III I II",
+   "II I III III"
+  ]
+ },
+ "2023_12": {
+  "s": "Which of the following statement is [[not]] true regarding biological motives ?",
+  "o": [
+   "They are universal",
+   "They are inborn",
+   "They are essential to survival",
+   "They are not related with homeostatis in the individual"
+  ]
+ },
+ "2023_14": {
+  "s": "Which of the following statement is [[not]] correct in reference to intelligence tests ?",
+  "o": [
+   "Alexander's Pass along test is a performance test.",
+   "Verbal test can be either individual or group.",
+   "Illiterate people cannot do performance test.",
+   "In non-verbal tests intelligence is measured through pictures and figures."
+  ]
+ },
+ "2023_28": {
+  "s": "Which of the following statement is [[not]] correct in context of development ?",
+  "o": [
+   "Development is the product of maturation and learning.",
+   "Later development is more critical than early development.",
+   "Development proceeds from head to foot.",
+   "Development proceeds from central axis to extremities."
+  ]
+ },
+ "2023_31": {
+  "s": "विशेषण के संबंध में कौन-सा सही सुमेलित [[नहीं]] है ?",
+  "o": [
+   "भारतीय - संज्ञा से निर्मित विशेषण",
+   "पवित्रतम - विशेषण की उत्तरावस्था",
+   "परिश्रमी - गुणवाचक विशेषण",
+   "आलस्य - विशेषण से निर्मित भाववाचक संज्ञा"
+  ]
+ },
+ "2023_32": {
+  "s": "किस विकल्प में शब्द-युग्म का सही अर्थ भेद [[नहीं]] है ?",
+  "o": [
+   "बाज़ी - दाव, वाजी - घोड़ा",
+   "मेध - हवन, मेघ - बादल",
+   "माणिक्य - चर्बी, माणिक्या - मछली",
+   "मुक्ता - मोती, मुक्ति - मोक्ष"
+  ]
+ },
+ "2023_33": {
+  "s": "कौन-सा युग्म संगत [[नहीं]] है ?",
+  "o": [
+   "भिक्षुक - तत्सम शब्द",
+   "मस्तक - तद्‌भव शब्द",
+   "खिचड़ी - देशज शब्द",
+   "अमानत - विदेशज शब्द"
+  ]
+ },
+ "2023_34": {
+  "s": "निम्नलिखित में से किस विकल्प का शब्द संधि-विच्छेद की दृष्टि से [[संगत]] है ?",
+  "o": [
+   "कुशासन = कुश + असन",
+   "वार्तालाप = वार्ता + अलाप",
+   "जानकीश = जनक + ईश",
+   "लघूर्मि = लघु + ऊर्मि"
+  ]
+ },
+ "2023_35": {
+  "s": "किस विकल्प के समस्त पद में बहुव्रीहि समास का उदाहरण [[नहीं]] है ?",
+  "o": [
+   "शेषशायी, क्षपानाथ",
+   "दीर्घश्वास, पाषाणहृदय",
+   "आशुतोष, मंदोदरी",
+   "पंचशर, पशुपति"
+  ]
+ },
+ "2023_36": {
+  "s": "किस विकल्प का शब्द ‘अन्’ उपसर्ग से निर्मित [[नहीं]] है ?",
+  "o": [
+   "अनंतर",
+   "अनीति",
+   "अनिष्ट",
+   "अनाचार"
+  ]
+ },
+ "2023_37": {
+  "s": "निम्न में से किस विकल्प के शब्द विदेशज प्रत्ययों से निर्मित हैं ?",
+  "o": [
+   "पल्लवित, नीलिमा",
+   "अड़ियल, कसावट",
+   "रिश्वतखोर, रोज़गार",
+   "झगड़ालू, हठीला"
+  ]
+ },
+ "2023_38": {
+  "s": "पर्यायवाची शब्दों के संबंध में कौन-सा विकल्प [[अनुचित]] है ?",
+  "o": [
+   "चन्द्रमा - हिमकर, अमृतांशु, महताब",
+   "गरुड़ - खगनाथ, वृषभी, भद्रा",
+   "चन्दन - गोरोचन, मलयज, सर्पावास",
+   "गंगा - अमरतटिनी, अद्रिजा, सुरसरि"
+  ]
+ },
+ "2023_39": {
+  "s": "वार्तनिक दृष्टि से किस विकल्प के सभी शब्द [[शुद्ध]] हैं ?",
+  "o": [
+   "अभ्यार्थी, त्यौहार",
+   "याज्ञवल्क्य, हस्तक्षेप",
+   "मैथली, अहिल्या",
+   "वैदेहि, वापिस"
+  ]
+ },
+ "2023_40": {
+  "s": "‘महात्मा गांधी ने भारत को आज़ाद कराया।’ उक्त वाक्य में रेखांकित शब्द क्रमशः हैं :\n(रेखांकित शब्द : [[महात्मा गांधी]], [[भारत]], [[आज़ाद]])",
+  "o": [
+   "व्यक्तिवाचक संज्ञा तथा जातिवाचक संज्ञा",
+   "जातिवाचक संज्ञा तथा भाववाचक संज्ञा",
+   "व्यक्तिवाचक संज्ञा तथा व्यक्तिवाचक संज्ञा",
+   "भाववाचक संज्ञा तथा व्यक्तिवाचक संज्ञा"
+  ]
+ },
+ "2023_41": {
+  "s": "निम्न में से किस मुहावरे का अर्थ संगत [[नहीं]] है ?",
+  "o": [
+   "अपने पैरों पर खड़ा होना - आत्मनिर्भर होना।",
+   "अंधे के हाथ बटेर लगना - बिना प्रयास के कोई चीज़ प्राप्त कर लेना।",
+   "एक घाट पानी पीना - एकता और सहिष्णुता होना।",
+   "कमान से तीर निकल जाना - किसी का भेद खुलना।"
+  ]
+ },
+ "2023_42": {
+  "s": "क्रिया के संबंध में [[अनुचित]] विकल्प चुनिए :",
+  "o": [
+   "कर्म के आधार पर क्रिया के ‘सकर्मक’ एवं ‘अकर्मक’ दो भेद माने जाते हैं।",
+   "सभी प्रेरणार्थक क्रियाएँ अकर्मक होती हैं।",
+   "‘पिता पुत्र से पत्र [[लिखवाता]] है।’ उक्त वाक्य में प्रेरणार्थक क्रिया प्रयुक्त हुई है।",
+   "‘बतियाना’, ‘लठियाना’ एवं ‘अपनाना’ नामधातु क्रिया के उदाहरण हैं।"
+  ]
+ },
+ "2023_43": {
+  "s": "सर्वनाम के संबंध में कौन-सा कथन [[असत्य]] है ?",
+  "o": [
+   "प्रयोग के आधार पर सर्वनाम के छह भेद हैं।",
+   "‘कोई’ तथा ‘कुछ’ अनिश्चयवाचक सर्वनाम शब्द हैं।",
+   "‘पुरुषवाचक’ सर्वनाम के चार भेद माने जाते हैं।",
+   "जिस सर्वनाम से वक्ता के पास अथवा दूर की किसी वस्तु का बोध होता है, उसे निश्चयवाचक सर्वनाम कहते हैं।"
+  ]
+ },
+ "2023_44": {
+  "s": "किस विकल्प में विपरीतार्थक युग्म [[असंगत]] है ?",
+  "o": [
+   "नूतन - पुरातन",
+   "दुराशय - सदाशय",
+   "दनुज - दानव",
+   "जंगम - स्थावर"
+  ]
+ },
+ "2023_45": {
+  "s": "वाक्यांश के लिए एकल शब्द के संबंध में [[अनुचित]] युग्म है :",
+  "o": [
+   "जो कानून की दृष्टि से उचित न हो - अवैध",
+   "जिसमें कोई छिद्र न हो - नीरन्ध्र",
+   "समुद्र में लगने वाली आग - दावानल",
+   "जो भोजन रोगी के लिए उचित है - पथ्य"
+  ]
+ },
+ "2023_50": {
+  "s": "Which of the following options express the [[correct]] meaning of the sentence given below ?\nNo sooner did I reach the college than the bell rang.",
+  "o": [
+   "The sooner I reached the college the earlier the bell rings.",
+   "I reached the college and the bell was rang after.",
+   "Although I reached the college the bell began to ring.",
+   "As soon as I reached the college, the bell rang."
+  ]
+ },
+ "2023_70": {
+  "s": "In a certain pattern, if 38 * 15 = 32, 62 * 91 = 7 and 74 * 81 = 29, then in the same pattern the value of 47 * 33 is :",
+  "o": [
+   "40",
+   "41",
+   "38",
+   "53"
+  ]
+ },
+ "2023_71": {
+  "s": "If it was Saturday on 17th December, 2002, what was the day on 22nd December, 2004 ?",
+  "o": [
+   "Sunday",
+   "Saturday",
+   "Monday",
+   "Tuesday"
+  ]
+ },
+ "2023_74": {
+  "s": "The radius of the circumcircle of the triangle made by x-axis, y-axis and 4x + 3y = 12 is :",
+  "o": [
+   "2 unit",
+   "2.5 unit",
+   "3 unit",
+   "4 unit"
+  ]
+ },
+ "2023_75": {
+  "s": "Find the least number which must be added to 15463 so that the resulting number is exactly divisible by 107 :",
+  "o": [
+   "52",
+   "55",
+   "71",
+   "76"
+  ]
+ },
+ "2023_82": {
+  "s": "Which Haryanvi conquered Mount Elbrus in August, 2023 ?",
+  "o": [
+   "Sandeep Bishnoi",
+   "Rohtash Bishnoi",
+   "Ajay Khichad",
+   "Mohit"
+  ]
+ },
+ "2023_87": {
+  "s": "Read the following statements about Sadhu Nischal Das :\n(i) He was a Dadu's disciple.\n(ii) He compiled a book 'Vichar Sagar' which is in form of dialogue.\nChoose the [[correct]] code :",
+  "o": [
+   "Only statement (i) is correct.",
+   "Only statement (ii) is correct.",
+   "Neither statement (i) nor statement (ii) are correct.",
+   "Both the statements (i) and (ii) are correct."
+  ]
+ },
+ "2023_89": {
+  "s": "When the Haryana State Co-operative Agriculture and Rural Development Board Ltd. was established ?",
+  "o": [
+   "January, 1967",
+   "November, 1966",
+   "March, 1980",
+   "January, 1996"
+  ]
+ },
+ "2023_93": {
+  "s": "To get information from users you use ........... .",
+  "o": [
+   "Tables",
+   "Queries",
+   "Forms",
+   "Data"
+  ]
+ },
+ "2023_99": {
+  "s": "Find the octal equivalent of 952₁₀ :",
+  "o": [
+   "1670₈",
+   "167₈",
+   "1607₈",
+   "1660₈"
+  ]
+ },
+ "2023_100": {
+  "s": "Tuples in Python are :",
+  "o": [
+   "mutable",
+   "immutable",
+   "modifiable",
+   "convertible"
+  ]
+ },
+ "2023_101": {
+  "s": "A set of style rules that describes a document's display characteristics is :",
+  "o": [
+   "Web Page",
+   "Style Sheet",
+   "Table",
+   "List"
+  ]
+ },
+ "2023_102": {
+  "s": "Find the decimal equivalent of octal number 127.54₈ :",
+  "o": [
+   "78.6875₁₀",
+   "48.6875₁₀",
+   "87.6875₁₀",
+   "67.6875₁₀"
+  ]
+ },
+ "2023_104": {
+  "s": "HTML tags must be written within .......... .",
+  "o": [
+   "( )",
+   "[ ]",
+   "{ }",
+   "<>"
+  ]
+ },
+ "2023_108": {
+  "s": "The query that is used to summarize the data from various tables is called as :",
+  "o": [
+   "SQL query",
+   "Join query",
+   "Selection query",
+   "Crosstab query"
+  ]
+ },
+ "2023_109": {
+  "s": "In database ........... type of field is used to insert various objects mode in other Windows applications into table.",
+  "o": [
+   "SQL query",
+   "Join object",
+   "OLE object",
+   "Hyperlink"
+  ]
+ },
+ "2023_114": {
+  "s": "In python elements of the list are written inside :",
+  "o": [
+   "[ ]",
+   "{ }",
+   "( )",
+   "<>"
+  ]
+ },
+ "2023_118": {
+  "s": ".............. allows you to synthesize and analyze data from list or existing table.",
+  "o": [
+   "Table",
+   "Merged table",
+   "Header table",
+   "Pivot table"
+  ]
+ },
+ "2023_119": {
+  "s": "............ command is used to duplicate the active document under different names ?",
+  "o": [
+   "File-Save as",
+   "File-Print as",
+   "View-Save",
+   "View-Save as"
+  ]
+ },
+ "2023_131": {
+  "s": "Chart created on worksheet is called as .............. .",
+  "o": [
+   "Column chart",
+   "Embedded chart",
+   "Resolution chart",
+   "Bar chart"
+  ]
+ },
+ "2023_135": {
+  "s": "Which of the following HTML codes display the content in bold face ?",
+  "o": [
+   "<b> This text is big <b>",
+   "<b> This text is big </b>",
+   "<b> This text is big <\\b>",
+   "<b/> This text is big <\\b>"
+  ]
+ },
+ "2023_139": {
+  "s": "In SQL terminology a ................ is a single table that is derived from other tables.",
+  "o": [
+   "Table",
+   "View",
+   "Base Table",
+   "Form"
+  ]
+ }
+}
