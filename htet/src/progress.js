@@ -1,5 +1,5 @@
 let pt='subj',pg='all';
-const GROUPS=[['all','All subjects'],['cs','Computer Science'],...OTHERS.map(s=>[s,sn(s)])],inG=(s,g)=>g==='all'||(g==='cs'?isCS(s):s===g);
+const GROUPS=[['all','All subjects'],...(D.mp?[['cs',D.ml]]:[]),...OTHERS.map(s=>[s,sn(s)])],inG=(s,g)=>g==='all'||(g==='cs'?isCS(s):s===g);
 V.prog=()=>{const f=full(),fr=f.map(res),p=S.attempts.filter(t=>t.kind==='part'),L=C.latest(S.attempts),w=C.weak(C.acc(D.qs,L,q=>q.t)),wrong=D.qs.filter(q=>L[q.i]&&!C.ok(q,L[q.i])).length;
 if(!S.attempts.length)return `<div class="stack"><h1>My progress</h1><div class="card tint stack"><p>Finish a mock to see your scores, averages and weak topics here.</p><div>${btn('Choose a paper','home','','p')}</div></div></div>`;
 const tl=tally(D.qs,q=>L[q.i]&&q.a!=='*'?C.ok(q,L[q.i]):null);for(const s in tl)if(!inG(s,pg))delete tl[s];

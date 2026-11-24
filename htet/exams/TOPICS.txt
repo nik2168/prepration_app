@@ -1,0 +1,95 @@
+# code name  (one tag per question: CODE.topic)
+CDP.lrn Learning theories & conditioning
+CDP.psy Freud, Erikson & moral development
+CDP.ado Adolescence
+CDP.cog Piaget, Vygotsky & cognition
+CDP.inc Inclusive education & special needs
+CDP.mem Memory & attention
+CDP.tch Teaching methods & pedagogy
+CDP.dev Growth & development principles
+CDP.mh Mental health & adjustment
+CDP.soc Socialisation & environment
+CDP.cre Creativity
+CDP.psyc Psychology basics & methods
+CDP.int Intelligence
+CDP.mot Motivation & emotion
+CDP.ass Assessment & evaluation
+CDP.per Personality
+CDP.ind Individual differences
+HIN.spe वर्तनी (spelling)
+HIN.san सन्धि
+HIN.upa उपसर्ग-प्रत्यय
+HIN.sam समास
+HIN.noun संज्ञा, लिंग, वचन, कारक
+HIN.pron सर्वनाम
+HIN.adj विशेषण
+HIN.var वर्ण विचार
+HIN.verb क्रिया, काल, वाच्य, अव्यय
+HIN.voc शब्द ज्ञान (पर्याय, विलोम आदि)
+HIN.idi मुहावरे-लोकोक्ति
+HIN.sent वाक्य
+HIN.pas गद्यांश
+HIN.ped हिन्दी शिक्षण
+ENG.voc Vocabulary & word formation
+ENG.tense Tenses, verbs & modals
+ENG.art Articles, prepositions & conjunctions
+ENG.pos Parts of speech & clauses
+ENG.voice Voice, narration & transformation
+ENG.idi Idioms & phrasal verbs
+ENG.err Error spotting
+ENG.sent Sentence structure & ordering
+ENG.com Comprehension (poem)
+ENG.ped English teaching
+Q.num Number system & simplification
+Q.alg Algebra
+Q.rat Ratio, average, ages & partnership
+Q.tim Time, work & speed
+Q.geo Geometry, mensuration & trigonometry
+Q.pct Percentage & profit-loss
+Q.int Interest
+R.blo Blood relations
+R.cod Coding-decoding
+R.wor Word & alphabet puzzles
+R.ser Series
+R.dir Directions
+R.ana Patterns, analogy & sets
+R.ran Ranking, order & seating
+R.cal Calendar
+G.his History, culture & monuments
+G.geo Geography, rivers & wildlife
+G.pol Polity & administration
+G.sch Schemes, economy & institutions
+G.spo Sports, awards & achievers
+PHY.mot Motion, force & gravitation
+PHY.work Work, energy & power
+PHY.sound Sound & waves
+PHY.light Light & optics
+PHY.elec Electricity & magnetism
+PHY.heat Heat & thermodynamics
+PHY.mod Units, matter & modern physics
+CHE.mat Matter, states & mixtures
+CHE.atom Atoms, molecules & periodic table
+CHE.react Chemical reactions & equations
+CHE.acid Acids, bases & salts
+CHE.metal Metals & non-metals
+CHE.carb Carbon & organic compounds
+CHE.every Everyday chemistry, polymers & materials
+BIO.cell Cell & tissues
+BIO.div Diversity & classification
+BIO.plant Plant life
+BIO.hum Human body systems
+BIO.repro Reproduction & heredity
+BIO.eco Ecology & environment
+BIO.health Health, disease & nutrition
+SCI.ped Science teaching & pedagogy
+MTH.num Number system & operations
+MTH.frac Fractions, decimals & money
+MTH.geo Shapes & geometry
+MTH.mea Measurement & time
+MTH.data Patterns & data handling
+MTH.ped Maths teaching & pedagogy
+EVS.fam Family, food & health
+EVS.nat Plants & animals
+EVS.res Water, air & resources
+EVS.soc Society, places & transport
+EVS.ped EVS teaching & pedagogy

@@ -69,3 +69,6 @@ selectedcontent{display:block;overflow:hidden;text-overflow:ellipsis;white-space
 @media(min-width:1000px){.g2 .acc summary{grid-template-columns:minmax(0,1fr) 110px 52px 18px}.g2 .acc .tr{grid-template-columns:minmax(0,1fr) 110px 82px}}
 
 .qt{white-space:pre-wrap;overflow-wrap:anywhere;max-width:640px}
+
+.exam{padding:14px 16px 0}.exam .fld{gap:4px}
+@media(min-width:768px){.exam{padding:0 0 16px}}

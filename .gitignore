@@ -4,3 +4,5 @@ __pycache__/
 htet/crops/
 htet/work/
 *.pdf
+htet/exams/crops/
+htet/exams/work/
