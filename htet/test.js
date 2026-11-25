@@ -7,3 +7,6 @@ assert.deepStrictEqual(C.latest([{date:2,ans:{a:1}},{date:1,ans:{a:3,b:2}}]),{a:
 const ac=C.acc(qs,{a:2,b:2,c:1},q=>'t');assert.deepStrictEqual(ac.t,{n:2,c:1,pct:50});
 assert.deepStrictEqual(C.weak({x:{n:4,pct:0},y:{n:5,pct:40},z:{n:9,pct:80}}),['y']);
 assert.strictEqual(C.focus(4,undefined),2);console.log('core ok');
+assert.strictEqual(C.score(qs,{a:1,b:4,d:1},0.25).m,2.75);
+assert.strictEqual(C.score(qs,{a:1,b:4,d:1}).m,3);
+assert.strictEqual(C.score(qs,{a:2},1).m,0);

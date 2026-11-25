@@ -1,7 +1,7 @@
 // pure scoring functions (also run by test.js)
 const C={
  ok:(q,a)=>q.a==='*'?true:!!a&&q.a.includes(a),          // '*' = mark to all, as in the official key
- score(qs,ans){let r={n:qs.length,c:0,w:0,s:0};for(const q of qs){const a=ans[q.i];if(C.ok(q,a))r.c++;else if(a)r.w++;else r.s++}r.pct=r.n?100*r.c/r.n:0;return r},
+ score(qs,ans,neg=0){let r={n:qs.length,c:0,w:0,s:0};for(const q of qs){const a=ans[q.i];if(C.ok(q,a))r.c++;else if(a)r.w++;else r.s++}r.pct=r.n?100*r.c/r.n:0;r.m=r.c-r.w*neg;return r},
  avg(l){return l.length?l.reduce((a,b)=>a+b,0)/l.length:null},
  latest(attempts){const m={};for(const t of [...attempts].sort((a,b)=>a.date-b.date))for(const i in t.ans)m[i]=t.ans[i];return m},
  // accuracy on each question's latest answer; unanswered questions are not counted

@@ -10,7 +10,7 @@ if(!Array.isArray(S.attempts))S.attempts=[];
 function save(){try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){if(!warned){warned=true;ask('This browser is not saving your progress. Export a backup before closing.',[['OK','p']])}}}
 function saveUI(){try{localStorage.setItem('htetmock-ui',JSON.stringify(U))}catch(e){}}
 const sub=q=>q.t.split('.')[0],tn=t=>D.top[t][0],sn=s=>D.subj[s].replace(D.mp||'',''),isCS=s=>!!D.mp&&D.subj[s].startsWith(D.mp),ys=D.papers.map(p=>p[0]);
-const yl=y=>y===2024?'2024 (held July 2025)':y===2026?'July 2026':''+y,pc=x=>x==null?'–':Math.round(x)+'%',pool=f=>D.qs.filter(f),qsOf=ids=>ids.map(i=>Qm[i]),res=t=>C.score(qsOf(t.ids),t.ans),full=()=>S.attempts.filter(t=>t.kind==='full');
+const yl=y=>y===2024?'2024 (held July 2025)':y===2026?'July 2026':''+y,pc=x=>x==null?'–':Math.round(x)+'%',pool=f=>D.qs.filter(f),qsOf=ids=>ids.map(i=>Qm[i]),res=t=>C.score(qsOf(t.ids),t.ans,t.neg||0),mk=x=>+x.toFixed(2),NEG=[[0,'None (as in HTET)'],[0.25,'1/4 mark off'],[1/3,'1/3 mark off'],[1,'1 mark off']],full=()=>S.attempts.filter(t=>t.kind==='full');
 const secF=v=>q=>v==='all'?true:v==='cs'?isCS(sub(q)):v==='noncs'?!isCS(sub(q)):sub(q)===v;
 const passMark=(n=150)=>n===150?(S.pass===55?82:90):Math.round(S.pass/100*n);
 // per-topic counts for the chosen papers; July 2026 has no non-CS questions so it is left out there
