@@ -92,7 +92,7 @@ js=lambda o:json.dumps(o,ensure_ascii=False,separators=(',',':')).replace('</','
 if os.path.exists('page.html'):
     rd=lambda n:open('src/'+n,encoding='utf8').read()
     font='data:font/woff2;base64,'+base64.b64encode(open('src/lexend-latin.woff2','rb').read()).decode()
-    ORDER=['core.js','store.js','app.js','ui.js','home.js','mock.js','result.js','progress.js','repeats.js','data.js']
+    ORDER=['core.js','store.js','app.js','ui.js','home.js','mock.js','view.js','result.js','progress.js','repeats.js','data.js']
     h=rd('../page.html').replace('/*CSS*/',rd('styles.css').replace('__LEXEND__',font)).replace('/*JS*/','\n'.join(rd(n) for n in ORDER)).replace('/*DATA*/','const X='+js(X)+';')
     open('../public/index.html','w').write(h); print('page MB',len(h.encode())/1e6)
 print('questions',len(QS),'repeat groups',len(REP))
