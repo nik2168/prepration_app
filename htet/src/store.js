@@ -7,6 +7,8 @@ const D=X[U.exam],SK=U.exam==='cs'?'htetmock':'htetmock-'+U.exam,Qm=Object.fromE
 let S={attempts:[],cur:null,pass:60},warned=false;
 try{S=Object.assign(S,JSON.parse(localStorage.getItem(SK)||'{}'))}catch(e){}
 if(!Array.isArray(S.attempts))S.attempts=[];
+// results or an unfinished mock that use a removed paper (CS 2018, 2019) cannot be shown, so they are dropped
+S.attempts=S.attempts.filter(t=>t.ids.every(i=>Qm[i]));if(S.cur&&!S.cur.ids.every(i=>Qm[i]))S.cur=null;
 function save(){try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){if(!warned){warned=true;ask('This browser is not saving your progress. Export a backup before closing.',[['OK','p']])}}}
 function saveUI(){try{localStorage.setItem('htetmock-ui',JSON.stringify(U))}catch(e){}}
 const sub=q=>q.t.split('.')[0],tn=t=>D.top[t][0],sn=s=>D.subj[s].replace(D.mp||'',''),isCS=s=>!!D.mp&&D.subj[s].startsWith(D.mp),ys=D.papers.map(p=>p[0]);

@@ -45,7 +45,7 @@ def repeats(QS,T,MAN='',DROP=()):
             if j>.5 and difflib.SequenceMatcher(None,W[x],W[z]).ratio()>.66: cand.append((x,z)); par[f(x)]=f(z)
     # reviewed by hand: same question or same fact asked again
     for g in MAN.split('|') if MAN else []:
-        g=g.split()
+        g=[x for x in g.split() if x in par]
         for x in g[1:]: par[f(x)]=f(g[0])
     G={}
     for i in ids:G.setdefault(f(i),[]).append(i)
@@ -54,10 +54,11 @@ def repeats(QS,T,MAN='',DROP=()):
     return REP
 MAN_CS="2020_93 2023_147|2022_68 2023_72|2019_72 2022_61|2020_76 2023_61|2020_119 2021_119 2026_121|2018_91 2022_149|2019_101 2023_95 2024_97|2019_141 2022_102|2021_95 2023_105 2024_133|2023_130 2024_127|2023_143 2024_148|2023_100 2024_142|2019_109 2024_111|2019_137 2020_138|2018_149 2019_107|2020_144 2024_140|2020_21 2022_6|2018_103 2021_111|2022_12 2024_30|2020_100 2020_122 2021_122|2023_140 2024_102|2018_144 2019_93|2018_147 2019_94 2022_114"
 DROP_CS=[{'2018_142','2019_116'},{'2019_98','2020_134'}]
+QS=[q for q in QS if q['y'] not in (2018,2019)]  # papers dropped from the page
 REP=repeats(QS,T,MAN_CS,DROP_CS)
 json.dump(dict(qs=QS,rep=REP),open('questions.json','w'),ensure_ascii=False)
-ABOUT_CS="2019 and 2021 to 2024 use BSEH final keys. 2018 and 2020 use BSEH draft keys. July 2026 uses a video instructor's answers, and doubtful ones carry a note. All papers are Set A."
-D_CS=dict(qs=QS,subj=SUBJ,top=TOP,rep=REP,papers=[[2018,'3321','draft'],[2019,'4321','final'],[2020,'9221','draft'],[2021,'321','final'],[2022,'921','final'],[2023,'1321','final'],[2024,'5321','final'],[2026,'7319','unofficial']])
+ABOUT_CS="2021 to 2024 use BSEH final keys. 2020 uses BSEH draft keys. July 2026 uses a video instructor's answers, and doubtful ones carry a note. All papers are Set A."
+D_CS=dict(qs=QS,subj=SUBJ,top=TOP,rep=REP,papers=[[2020,'9221','draft'],[2021,'321','final'],[2022,'921','final'],[2023,'1321','final'],[2024,'5321','final'],[2026,'7319','unofficial']])
 D_CS.update(name='PGT Computer Science',lvl='PGT',pick='Computer Science (PGT)',mp='CS: ',ml='Computer Science',ms='CS',mn=60,part=2026,syl=True,date=[2026,11,26,15],when='Level 3 is on 26 December 2026, 3:00 to 5:30 pm.',about=ABOUT_CS)
 # TGT Science and PRT: text in exams/text (PDF) overridden by exams/fixed (checked), tags in exams/tags, official keys in exams/keys_raw
 TOPN={l.split(' ',1)[0]:l.split(' ',1)[1] for l in open('exams/TOPICS.txt',encoding='utf8').read().split('\n') if l and l[0]!='#'}
