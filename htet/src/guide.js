@@ -1,6 +1,12 @@
 // Guide: exam facts and the 30-day plan. Static text, checked against BSEH/HPSC documents on 26 Nov 2026.
 const gt=(h,rows)=>`<div class="gt"><table><thead><tr>${h.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(x=>`<td>${x}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
 V.guide=()=>`<div class="stack guide"><div><h1>Exam guide</h1><p class="mut">From the official BSEH HTET-2026 bulletin and HPSC documents, checked 26 Nov 2026. Pass rates are from news reports.</p></div>
+<section class="card stack tint"><h2>My application</h2><ul>
+<li><b>Applied:</b> HTET-2026 Level 3, PGT Computer Science. Application no. 538037.</li>
+<li><b>Fee:</b> ₹1,200 paid online on 26 Nov 2026.</li>
+<li><b>Exam:</b> Sat 26 Dec 2026, 3:00–5:30 pm, centre preference Rewari. Target: 90/150.</li>
+<li><b>Admit card:</b> expected mid-December on htet2026.org, downloaded with the application number.</li>
+<li><b>To confirm:</b> the bulletin says PGT CS needs a "three-year" MCA, but mine is the 2-year course. Check with the BSEH helpline.</li></ul></section>
 <section class="card stack"><h2>HTET-2026 key facts</h2><ul>
 <li><b>Exam:</b> PGT (Level 3) on Sat 26 Dec 2026, 3:00–5:30 pm. 150 questions, 1 mark each.</li>
 <li><b>Negative marking:</b> none. The bulletin (p. 16) says "There shall be no negative marking."</li>
