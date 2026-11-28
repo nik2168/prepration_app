@@ -20,6 +20,10 @@ async function sync(){if(!U.key||!location.protocol.startsWith('http'))return;
   save();syncMsg='Last synced '+new Date().toLocaleTimeString()}
  catch(e){syncMsg='Not synced: '+e.message}
  if(view==='data'||(view!=='mock'&&view!=='view'&&was!==JSON.stringify(S.attempts)))render()}
+// also sync on returning to an open app or reconnecting; focus and visibilitychange often fire together
+let autoAt=0;
+function autoSync(){if(document.visibilityState==='visible'&&Date.now()-autoAt>5000){autoAt=Date.now();sync()}}
+addEventListener('focus',autoSync);addEventListener('online',autoSync);document.addEventListener('visibilitychange',autoSync);
 function saveUI(){try{localStorage.setItem('htetmock-ui',JSON.stringify(U))}catch(e){}}
 const sub=q=>q.t.split('.')[0],tn=t=>D.top[t][0],sn=s=>D.subj[s].replace(D.mp||'',''),isCS=s=>!!D.mp&&D.subj[s].startsWith(D.mp),ys=D.papers.map(p=>p[0]);
 const yl=y=>y===2024?'2024 (held July 2025)':y===2026?'July 2026':''+y,pc=x=>x==null?'–':Math.round(x)+'%',pool=f=>D.qs.filter(f),qsOf=ids=>ids.map(i=>Qm[i]),res=t=>C.score(qsOf(t.ids),t.ans,t.neg||0),mk=x=>+x.toFixed(2),full=()=>S.attempts.filter(t=>t.kind==='full');

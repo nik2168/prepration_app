@@ -16,4 +16,5 @@ Offline-first exam prep pages. Deployed on Vercel as static files from `public/`
 - Variables, in `.env` locally and in Vercel (Settings -> Environment Variables): `MONGOURL`, `SYNC_KEY` (long random string).
 - Atlas -> Network Access must allow `0.0.0.0/0`, so use a long database password.
 - On each device: Backup tab -> Cloud sync -> enter the `SYNC_KEY`.
+- Syncs on page load, after each finished mock, on returning to the app and on reconnecting.
 - Checks: `node test/sync.test.js`.
