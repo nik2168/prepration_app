@@ -4,12 +4,24 @@ try{U=Object.assign(U,JSON.parse(localStorage.getItem('htetmock-ui')||'{}'))}cat
 if(!X[U.exam])U.exam='cs';
 // X holds every exam; the page reloads when the exam changes, so D and all consts below are for one exam. CS keeps the original key.
 const D=X[U.exam],SK=U.exam==='cs'?'htetmock':'htetmock-'+U.exam,Qm=Object.fromEntries(D.qs.map(q=>[q.i,q]));
-let S={attempts:[],cur:null,pass:60},warned=false;
+let S={attempts:[],cur:null,pass:60,cleared:0},warned=false;
 try{S=Object.assign(S,JSON.parse(localStorage.getItem(SK)||'{}'))}catch(e){}
 if(!Array.isArray(S.attempts))S.attempts=[];
 // results or an unfinished mock that use a removed paper (CS 2018, 2019) cannot be shown, so they are dropped
 S.attempts=S.attempts.filter(t=>t.ids.every(i=>Qm[i]));if(S.cur&&!S.cur.ids.every(i=>Qm[i]))S.cur=null;
 function save(){try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){if(!warned){warned=true;ask('This browser is not saving your progress. Export a backup before closing.',[['OK','p']])}}}
+// Cloud sync (api/sync.js). Does nothing without a key or when opened as a local file; a failure leaves local results as they are.
+let syncMsg='';
+async function sync(){if(!U.key||!location.protocol.startsWith('http'))return;
+ const sent=new Set(S.attempts.map(t=>t.id)),was=JSON.stringify(S.attempts);
+ try{const r=await fetch('/api/sync',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+U.key},body:JSON.stringify({exam:U.exam,attempts:S.attempts,cleared:S.cleared})}),o=await r.json().catch(()=>({}));
+  if(!r.ok||!Array.isArray(o.attempts))throw Error(o.error||'Server error '+r.status);
+  S.cleared=Math.max(S.cleared,o.cleared);
+  // keep anything finished while the request was in flight
+  S.attempts=[...o.attempts,...S.attempts.filter(t=>!sent.has(t.id))].filter(t=>(t.at||t.date)>S.cleared&&t.ids.every(i=>Qm[i])).sort((a,b)=>a.date-b.date);
+  save();syncMsg='Last synced '+new Date().toLocaleTimeString()}
+ catch(e){syncMsg='Not synced: '+e.message}
+ if(view==='data'||(view!=='mock'&&view!=='view'&&was!==JSON.stringify(S.attempts)))render()}
 function saveUI(){try{localStorage.setItem('htetmock-ui',JSON.stringify(U))}catch(e){}}
 const sub=q=>q.t.split('.')[0],tn=t=>D.top[t][0],sn=s=>D.subj[s].replace(D.mp||'',''),isCS=s=>!!D.mp&&D.subj[s].startsWith(D.mp),ys=D.papers.map(p=>p[0]);
 const yl=y=>y===2024?'2024 (held July 2025)':y===2026?'July 2026':''+y,pc=x=>x==null?'–':Math.round(x)+'%',pool=f=>D.qs.filter(f),qsOf=ids=>ids.map(i=>Qm[i]),res=t=>C.score(qsOf(t.ids),t.ans,t.neg||0),mk=x=>+x.toFixed(2),full=()=>S.attempts.filter(t=>t.kind==='full');

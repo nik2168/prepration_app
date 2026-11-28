@@ -11,6 +11,13 @@ Offline-first exam prep pages. Deployed on Vercel as static files from `public/`
 - Re-cropping questions (`seg.py`, `crop.py`) needs the source PDFs in `~/Downloads/HTET/Question_Papers/`.
 - Deploy: import the repo in Vercel, framework "Other", no build command, output directory `public` (already in `vercel.json`).
 
+## Cloud sync
+`api/sync.js` is a Vercel Function that merges finished mocks into MongoDB Atlas (database `htet`, collection `state`).
+- Variables, in `.env` locally and in Vercel (Settings -> Environment Variables): `MONGOURL`, `SYNC_KEY` (long random string).
+- Atlas -> Network Access must allow `0.0.0.0/0`, so use a long database password.
+- On each device: Backup tab -> Cloud sync -> enter the `SYNC_KEY`.
+- Checks: `node test/sync.test.js`.
+
 ## Subjects in the page
 A Subject dropdown (top of the sidebar, top of every screen on phones) switches between PGT Computer Science, TGT Science and PRT. Each keeps its own saved results (CS keeps the original `htetmock` key; the others use `htetmock-sci` and `htetmock-prt`). The page reloads when you switch.
 - TGT Science and PRT: 2021, 2022, 2023, 2024 (held July 2025), official BSEH final keys, Set A. July 2026 keys are behind a login, so those papers are not included.

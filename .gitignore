@@ -6,3 +6,5 @@ htet/work/
 *.pdf
 htet/exams/crops/
 htet/exams/work/
+.env
+node_modules/
