@@ -8,6 +8,7 @@ Offline-first exam prep pages. Deployed on Vercel as static files from `public/`
 - Tabs: Mocks, Revise, Progress, Settings. Theme matches the Family Money app (Pastel, Auto/Light/Dark). No page zoom (viewport, 16px inputs, iOS `gesturestart`).
 - Revise: `htet/syllabus.json` is the official Level-III syllabus (BSEH HTET bulletin, Annexure-I), subject -> unit -> topic; every tag in `tags.py` belongs to exactly one topic (build asserts it).
   Notes: `htet/revise/<topic id>.html`, an HTML fragment (`h2`, `ul`, `table`, `pre`, `<p class="key">` for the must-know box, `<p class="src">` for sources). Rebuild after adding one.
+  Hindi (14 pages, one per HIN tag) is checked against Kamta Prasad Guru, *हिंदी व्याकरण* (Hindi Wikisource, `पृष्ठ:हिंदी_व्याकरण.pdf/<page>`), the Central Hindi Directorate spelling standard and the NCF 2005 position paper on Indian languages; each page links the pages used. Where Guru differs from the school convention HTET follows, the page keeps the school version and says so in a `trap` box. Doubtful BSEH keys are flagged on the pages.
 - Rebuild after editing `htet/src/*`, `htet/tags.py` or keys: `cd htet && uv run --with pillow python build.py`, then commit `public/index.html`.
 - Checks: `node htet/test.js`; UI test: `htet/ui_test.py <scratch dir>`.
 - Question text: `htet/text.json` (auto-extracted English) overridden by `htet/fixed/<year>.json` (checked/typed, incl. Hindi); 2024 Q51-60 poem in `htet/passages.json`. `htet/crops/` (page images, used only to check text) is not committed.
