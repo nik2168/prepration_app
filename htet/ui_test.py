@@ -24,7 +24,7 @@ with sync_playwright() as p:
     g.screenshot(path=S+'/ui2/d3result.png');g.click('[data-go=prog]');g.click('.acc summary >> nth=1');g.screenshot(path=S+'/ui2/d4prog.png',full_page=True)
     g.click('[data-act=pg][data-v=HIN]');assert g.locator('.acc').count()==1;g.click('[data-act=pt][data-v=hist]');assert g.locator('.li').count()==2
     # repeats filters
-    g.click('[data-go=rep]');g.screenshot(path=S+'/ui2/d5focus.png')
+    g.evaluate("go('rep')");g.screenshot(path=S+'/ui2/d5focus.png')
     for t in('topics','years','again','focus'):g.click(f'[data-act=rtab][data-v={t}]')
     g.click('[data-act=rtab][data-v=years]');g.wait_for_timeout(100);g.screenshot(path=S+'/ui2/d6years.png',full_page=True)
     assert g.locator('tbody tr').count()==7;g.click('[data-act=rdrill][data-v=cs]');g.click('[data-act=rdrill][data-v=PY]');assert g.evaluate('U.rep.area')=='PY';assert g.locator('tbody tr').count()==3
@@ -33,7 +33,7 @@ with sync_playwright() as p:
     g.select_option('#syl','all');g.select_option('#yrs','y2026');n=g.evaluate("stats([2026]).filter(x=>isCS(x.s)).reduce((a,x)=>a+x.tot,0)");assert n==60
     g.fill('#rq','python');assert all('Python' in x for x in g.locator('.li').all_inner_texts()) and g.locator('.li').count()==3
     g.click('[data-act=rg][data-v=HIN]');assert 'July 2026 has' in g.inner_text('#rbody');g.click('[data-act=rclr]');assert g.locator('.li').count()==14
-    g.select_option('#sort','papers');g.reload();g.click('[data-go=rep]');assert g.evaluate('U.rep.g')=='HIN'
+    g.select_option('#sort','papers');g.reload();g.evaluate("go('rep')");assert g.evaluate('U.rep.g')=='HIN'
     # dropdown open
     g.click('[data-act=rg][data-v=cs]');g.click('#area');g.wait_for_timeout(350);g.screenshot(path=S+'/ui2/d8drop.png');g.keyboard.press('ArrowDown');g.keyboard.press('Enter');g.wait_for_timeout(200);print('keyboard pick',g.evaluate('U.rep.area'),'base-select',g.evaluate("CSS.supports('appearance','base-select')"))
     # mixes, redo, weak, timeout, backup
@@ -45,7 +45,7 @@ with sync_playwright() as p:
     d.value.save_as(S+'/ui2/b.json');g.click('[data-act=reset]');g.click('dialog .p');assert g.evaluate('S.attempts.length')==0
     open(S+'/ui2/bad.json','w').write('{"attempts":[{"ids":["__proto__"],"ans":{},"date":1,"id":1,"label":"x","time":1}]}');g.set_input_files('#imp',S+'/ui2/bad.json');g.wait_for_selector('text=not a valid backup');g.click('dialog .p')
     g.set_input_files('#imp',S+'/ui2/b.json');g.wait_for_selector('text=Replace current');g.click('dialog .p');g.wait_for_timeout(200);assert g.evaluate('S.attempts.length')==n
-    g.evaluate("SEL.theme('dark')");g.click('[data-go=rep]');g.click('[data-act=rg][data-v=all]');g.click('[data-act=rtab][data-v=years]');g.screenshot(path=S+'/ui2/d10dark.png');g.evaluate("SEL.theme('light')")
+    g.evaluate("SEL.theme('dark')");g.evaluate("go('rep')");g.click('[data-act=rg][data-v=all]');g.click('[data-act=rtab][data-v=years]');g.screenshot(path=S+'/ui2/d10dark.png');g.evaluate("SEL.theme('light')")
     # widths
     bad=[]
     for w in(320,390,768,1024,1440):
@@ -55,8 +55,8 @@ with sync_playwright() as p:
             if s>w:bad.append((w,n,s))
         ck('home')
         if w==390:m.wait_for_timeout(300);m.screenshot(path=S+'/ui2/m1.png')
-        for k in('prog','rep','data'):
-            m.click(f'[data-go={k}]');ck(k)
+        for k in('prog','rev','rep','data'):
+            m.evaluate(f"go('{k}')");ck(k)
             if k=='rep':
                 for t in('focus','topics','years','again'):m.click(f'[data-act=rtab][data-v={t}]');ck(t);(w==390 and t=='years') and (m.wait_for_timeout(200),m.screenshot(path=S+'/ui2/m2.png',full_page=True))
             if k=='prog' and w==390:m.screenshot(path=S+'/ui2/m3.png')

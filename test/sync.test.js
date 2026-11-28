@@ -4,6 +4,8 @@ const ids=r=>r.attempts.map(a=>a.id);
 assert.deepStrictEqual(ids(merge({attempts:[t(1,10),t(2,20)]},{attempts:[t(2,20),t(3,15)],cleared:0})),[1,3,2]);
 assert.deepStrictEqual(ids(merge({attempts:[t(1,10),t(2,30)]},{attempts:[],cleared:20})),[2]);           // delete all sticks
 assert.deepStrictEqual(ids(merge({attempts:[],cleared:20},{attempts:[t(1,10,{at:25})],cleared:0})),[1]); // import after delete survives
+assert.deepStrictEqual(merge({attempts:[],done:{a:5,b:9}},{attempts:[],cleared:0,done:{a:-7,b:3,c:1}}).done,{a:-7,b:9,c:1}); // newest tick/untick wins
+assert.deepStrictEqual(merge({attempts:[]},{attempts:[],cleared:0}).done,{});                                          // old clients send no done
 (async()=>{
  process.env.SYNC_KEY='k';process.env.MONGOURL='x';
  const db={},col={findOne:async q=>db[q._id],replaceOne:async(q,d)=>{db[q._id]=d}};
@@ -13,6 +15,7 @@ assert.deepStrictEqual(ids(merge({attempts:[],cleared:20},{attempts:[t(1,10,{at:
  assert.strictEqual((await call(body,'no')).code,401);
  assert.strictEqual((await call({...body,cleared:'x'})).code,400);
  assert.strictEqual((await call({...body,attempts:[{}]})).code,400);
+ assert.strictEqual((await call({...body,done:{a:'x'}})).code,400);
  assert.deepStrictEqual(ids((await call(body)).out),[1]);
  assert.deepStrictEqual(ids((await call({...body,attempts:[t(2,20)]})).out),[1,2]);
  console.error=()=>{};assert.strictEqual((await call(body,'k',async()=>{throw Error('down')})).code,500);

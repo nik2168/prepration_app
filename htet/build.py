@@ -59,12 +59,18 @@ REP=repeats(QS,T,MAN_CS,DROP_CS)
 json.dump(dict(qs=QS,rep=REP),open('questions.json','w'),ensure_ascii=False)
 ABOUT_CS="2021 to 2024 use BSEH final keys. 2020 uses BSEH draft keys. July 2026 uses a video instructor's answers, and doubtful ones carry a note. All papers are Set A."
 D_CS=dict(qs=QS,subj=SUBJ,top=TOP,rep=REP,papers=[[2020,'9221','draft'],[2021,'321','final'],[2022,'921','final'],[2023,'1321','final'],[2024,'5321','final'],[2026,'7319','unofficial']])
+SY=json.load(open('syllabus.json'));TS=[t for m in SY['mods'] for u in m['units'] for t in u['topics']]
+used=[g for t in TS for g in t['tags']];ids=[t['id'] for t in TS]
+assert len(ids)==len(set(ids)) and sorted(used)==sorted(set(used))==sorted(TOP),'every tag in exactly one syllabus topic'
+NOTES={t['id']:open(f"revise/{t['id']}.html",encoding='utf8').read() for t in TS if os.path.exists(f"revise/{t['id']}.html")}
+assert {f[:-5] for f in os.listdir('revise')}<=set(ids),'note file with no syllabus topic'
+D_CS.update(mods=SY['mods'],sylsrc=SY['source'],notes=NOTES)
 D_CS.update(name='PGT Computer Science',lvl='PGT',mp='CS: ',ml='Computer Science',ms='CS',mn=60,part=2026,syl=True,date=[2026,11,26,15],when='Level 3 is on 26 December 2026, 3:00 to 5:30 pm.',about=ABOUT_CS)
 js=lambda o:json.dumps(o,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
 if os.path.exists('page.html'):
     rd=lambda n:open('src/'+n,encoding='utf8').read()
     font='data:font/woff2;base64,'+base64.b64encode(open('src/lexend-latin.woff2','rb').read()).decode()
-    ORDER=['core.js','store.js','app.js','ui.js','home.js','mock.js','view.js','result.js','progress.js','repeats.js','guide.js','data.js']
+    ORDER=['core.js','store.js','app.js','ui.js','home.js','mock.js','view.js','result.js','progress.js','repeats.js','guide.js','revise.js','ai.js','data.js']
     h=rd('../page.html').replace('/*CSS*/',rd('styles.css').replace('__LEXEND__',font)).replace('/*JS*/','\n'.join(rd(n) for n in ORDER)).replace('/*DATA*/','const D='+js(D_CS)+';')
     open('../public/index.html','w').write(h); print('page MB',len(h.encode())/1e6)
 print('questions',len(QS),'repeat groups',len(REP))

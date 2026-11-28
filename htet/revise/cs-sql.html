@@ -1,0 +1,59 @@
+<p class="key"><b>Most asked:</b> which command is DDL or DML (4 times since 2020), VIEW = virtual table (3), UPDATE changes values (2), DROP vs DELETE (2). Also asked: ALTER adds a column, HAVING vs WHERE, ORDER BY, aggregate functions.</p>
+
+<h2>Command groups</h2>
+<table>
+<tr><th>Group</th><th>Commands</th><th>What it changes</th></tr>
+<tr><td><b>DDL</b>: Data Definition</td><td>CREATE, ALTER, DROP, TRUNCATE, RENAME</td><td>The structure (schema) of tables</td></tr>
+<tr><td><b>DML</b>: Data Manipulation</td><td>SELECT, INSERT, UPDATE, DELETE</td><td>The rows (data) inside tables</td></tr>
+<tr><td><b>DCL</b>: Data Control</td><td>GRANT, REVOKE</td><td>Who may do what</td></tr>
+<tr><td><b>TCL</b>: Transaction Control</td><td>COMMIT, ROLLBACK, SAVEPOINT</td><td>Saving or undoing changes</td></tr>
+</table>
+<ul>
+<li>"Query and modification commands" (query, insert, delete) are <b>DML</b>. "Creating the structure of relations" is <b>DDL</b>.</li>
+<li><b>UPDATE is not DDL</b> (it is DML). TRUNCATE <i>is</i> DDL.</li>
+<li>The result of a SELECT is always a <b>table</b> (a relation).</li>
+</ul>
+
+<h2>Look-alike commands</h2>
+<table>
+<tr><th>Task</th><th>Command</th></tr>
+<tr><td>Add, remove or change a <b>column</b></td><td><code>ALTER TABLE t ADD col INT;</code></td></tr>
+<tr><td>Change <b>values</b> in rows</td><td><code>UPDATE t SET marks = 90 WHERE id = 5;</code></td></tr>
+<tr><td>Remove rows but <b>keep the table</b></td><td><code>DELETE FROM t;</code> (can use WHERE, can be rolled back)</td></tr>
+<tr><td>Remove all rows fast, keep the structure</td><td><code>TRUNCATE TABLE t;</code> (no WHERE)</td></tr>
+<tr><td>Remove the <b>table and its data</b></td><td><code>DROP TABLE t;</code></td></tr>
+</table>
+<p>2022 Q134 pattern: "keep R but empty it" → <code>DELETE FROM R</code>; "remove R completely" → <code>DROP TABLE R</code>.</p>
+
+<h2>SELECT and its clauses</h2>
+<pre>SELECT dept, COUNT(*)      -- columns
+FROM   staff               -- table
+WHERE  salary &gt; 30000      -- filters rows, before grouping
+GROUP BY dept              -- makes groups
+HAVING COUNT(*) &gt; 5        -- filters groups, after grouping
+ORDER BY dept DESC;        -- sorts (ASC is the default)</pre>
+<ul>
+<li>Sorting uses <b>ORDER BY</b> (not SORT BY).</li>
+<li><b>HAVING</b> is like WHERE, but it works on groups and can use aggregate functions. WHERE cannot use aggregates.</li>
+<li>Aggregate functions: <b>COUNT, SUM, AVG, MAX, MIN</b>. COMPUTE is <i>not</i> one. COUNT(*) counts every row; COUNT(col) skips NULLs.</li>
+<li>Other clauses that get asked: DISTINCT, BETWEEN, IN, LIKE (<code>%</code> = any characters, <code>_</code> = one character), IS NULL.</li>
+</ul>
+
+<h2>Views and nested queries</h2>
+<ul>
+<li>A <b>VIEW</b> is a <b>virtual table</b> made from other tables by a stored query: <code>CREATE VIEW v AS SELECT …;</code> It stores no data of its own.</li>
+<li>A <b>nested query (subquery)</b> is a complete SELECT-FROM-WHERE block inside another query: <code>… WHERE marks &gt; (SELECT AVG(marks) FROM t)</code>.</li>
+</ul>
+
+<h2>Relational algebra links</h2>
+<ul>
+<li><b>Select (σ)</b> picks rows that satisfy a <b>selection condition</b>; <b>Project (π)</b> picks columns.</li>
+<li>Set operations: (R − S) and (S − R) never share a tuple, so <b>(R − S) ∩ (S − R) = φ</b>.</li>
+</ul>
+
+<h2>Constraints and keys in SQL</h2>
+<ul>
+<li>PRIMARY KEY (unique + not null), UNIQUE, NOT NULL, DEFAULT, CHECK, FOREIGN KEY (REFERENCES another table).</li>
+</ul>
+
+<p class="src">Sources: the 19 SQL questions in HTET 2020–2024 papers (in this app), and standard SQL as taught in the BSEH class XI–XII Informatics Practices / Computer Science books.</p>

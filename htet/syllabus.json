@@ -1,0 +1,788 @@
+{
+"source": "BSEH HTET Information Bulletin, Annexure-I, Level-III (PGT), Parts I-IV. Questions follow the BSEH class IX-XII syllabus, difficulty up to PG level.",
+"mods": [
+{
+"id": "cs",
+"name": "Computer Science",
+"marks": 60,
+"units": [
+{
+"name": "A. Computer system and office software",
+"topics": [
+{
+"id": "cs-sys",
+"name": "Computer system and CPU",
+"tags": [
+"FU.gen",
+"FU.hw"
+],
+"syl": "History, generations, characteristics, advantages and limitations, applications and types of a computer system. CPU, ALU and CU, input/output devices."
+},
+{
+"id": "cs-mem",
+"name": "Memory",
+"tags": [
+"FU.mem",
+"OS.mem"
+],
+"syl": "Units of memory, types of memory."
+},
+{
+"id": "cs-lang",
+"name": "Programming languages and microprocessor",
+"tags": [
+"FU.lang"
+],
+"syl": "Classification of programming language: high level language, machine level language. History, architecture and characteristics of microprocessor."
+},
+{
+"id": "cs-num",
+"name": "Encoding and number systems",
+"tags": [
+"DL.num",
+"DL.bool"
+],
+"syl": "Encoding schemes and number system: ASCII, UNICODE, number system and conversions."
+},
+{
+"id": "cs-sw",
+"name": "Software and operating system",
+"tags": [
+"FU.sw",
+"OS.proc"
+],
+"syl": "System software (operating system: its need and functions, compiler, interpreter, assembler), application software, utility software, device drivers."
+},
+{
+"id": "cs-win",
+"name": "MS Windows",
+"tags": [
+"OS.win"
+],
+"syl": "Desktop, taskbar, icons, This PC, Recycle Bin, File Explorer, Edge browser, cut, copy, paste, theme and background."
+},
+{
+"id": "cs-word",
+"name": "MS Word",
+"tags": [
+"MO.word",
+"MO.gen"
+],
+"syl": "Components, formatting, alignment, indents, borders and shading, symbols, shapes, clip art, WordArt, headers and footers, tables, page setup, printing."
+},
+{
+"id": "cs-xl",
+"name": "MS Excel",
+"tags": [
+"MO.xl"
+],
+"syl": "Components, workbook, worksheet, formatting, cell address, cell pointer, active cell, range of cells, text, formulas, date/time, charts, types and components of charts, creating charts, printing. Functions: SUM(), AVERAGE(), MAX(), MIN(), COUNT()."
+},
+{
+"id": "cs-ppt",
+"name": "MS PowerPoint",
+"tags": [
+"MO.ppt"
+],
+"syl": "Components, elements of a slide, creating and saving a presentation, slide layouts, slide views, formatting, clip art, pictures, shapes, headers/footers and slide numbers, animation schemes, sound effects, slide show."
+}
+]
+},
+{
+"name": "B. Problem solving, software engineering, Python, society and HTML",
+"topics": [
+{
+"id": "cs-algo",
+"name": "Problem solving, algorithms and flowcharts",
+"tags": [
+"SE.alg"
+],
+"syl": "Problem solving cycle: analyse, design, coding, implementation and testing. Need of algorithm, designing algorithms using flowcharts. Concept and need of programming. Program constructs: sequence, selection and recurrence."
+},
+{
+"id": "cs-sdlc",
+"name": "SDLC",
+"tags": [
+"SE.req",
+"SE.proc",
+"SE.mgt"
+],
+"syl": "Major stages in SDLC: requirement gathering and analysis (survey), investigation and fact recording (feasibility study), software design, development (coding), testing, implementation, maintenance."
+},
+{
+"id": "cs-test",
+"name": "Software testing",
+"tags": [
+"SE.test"
+],
+"syl": "Black box and white box testing. Levels of testing: unit, integration, system and acceptance testing."
+},
+{
+"id": "cs-py",
+"name": "Python basics and control structures",
+"tags": [
+"PY.bas"
+],
+"syl": "Features of Python, interactive and script mode, structure of a program, identifiers, keywords, constants, variables, operators and precedence, data types, statements, expressions, comments, input and output, type conversion, debugging. Control structures: sequence, selection and repetition."
+},
+{
+"id": "cs-pyfn",
+"name": "Python functions and strings",
+"tags": [
+"PY.oop"
+],
+"syl": "Need of functions, user defined functions, built-in functions. Strings: initialising and accessing strings, string operations."
+},
+{
+"id": "cs-pyds",
+"name": "Python lists, tuples and dictionaries",
+"tags": [
+"PY.ds"
+],
+"syl": "List operations. Tuples: creating, initialising, accessing elements, operations. Dictionary: key-value pairs, mutability, creating, initialising, dictionary operations."
+},
+{
+"id": "cs-trend",
+"name": "Emerging trends",
+"tags": [
+"ET.ai",
+"ET.cloud"
+],
+"syl": "Artificial intelligence, machine learning, natural language processing, robotics, big data, data science, Internet of Things, sensors, smart cities, cloud computing, grid computing, blockchain, 5G network, e-commerce."
+},
+{
+"id": "cs-sec",
+"name": "Cyber security",
+"tags": [
+"SC.sec"
+],
+"syl": "Computer virus, malware, adware, worms, Trojan, ransomware, spyware, hackers and crackers, safety measures, identity protection, proper use of passwords, confidentiality of information."
+},
+{
+"id": "cs-eth",
+"name": "Digital footprints, cyber law and health",
+"tags": [
+"SC.eth"
+],
+"syl": "Etiquettes of net surfing and social media, intellectual property rights (IPR), cyber crime and cyber laws, hacking, phishing, cyber bullying, Indian IT Act, cyber crime prevention. Health problems from technology use, such as impact on eyes."
+},
+{
+"id": "cs-html",
+"name": "HTML",
+"tags": [
+"WB.html"
+],
+"syl": "History of HTML, text editor, basic structure of an HTML page, creating and saving, opening in a browser, container and empty elements, HTML elements, text formatting, lists, images, tables and links."
+}
+]
+},
+{
+"name": "C. Database, networks, internet, C++ and data structures",
+"topics": [
+{
+"id": "cs-db",
+"name": "Database concepts and normalisation",
+"tags": [
+"DB.er",
+"DB.nf",
+"DB.txn"
+],
+"syl": "Need and advantages of a database, files, fields and records, need of normalisation, normal forms."
+},
+{
+"id": "cs-acc",
+"name": "MS Access",
+"tags": [
+"MO.acc"
+],
+"syl": "Features, components, data types, elements of an Access database, creating/opening a database, primary key, creating tables in Datasheet and Design view, viewing, editing and printing tables."
+},
+{
+"id": "cs-sql",
+"name": "SQL",
+"tags": [
+"DB.sql"
+],
+"syl": "Advantages, data types, commands, clauses, functions."
+},
+{
+"id": "cs-comm",
+"name": "Transmission media and wireless",
+"tags": [
+"NW.sig"
+],
+"syl": "Transmission media (guided and unguided), wired/wireless communication, Wi-Fi, Bluetooth, cloud computing (public and private)."
+},
+{
+"id": "cs-net",
+"name": "Computer networks",
+"tags": [
+"NW.top"
+],
+"syl": "Computer network, networking and its need, types of computer networks, network models and their protocols."
+},
+{
+"id": "cs-inet",
+"name": "Internet and web",
+"tags": [
+"NW.net"
+],
+"syl": "Internet, its history and working, requirements, firewalls, World Wide Web, web browsers, web servers, web portal, website, search engines, URL, web page, e-mail, blogs, newsgroups, video conferencing."
+},
+{
+"id": "cs-proto",
+"name": "Internet protocols",
+"tags": [
+"NW.pro"
+],
+"syl": "TCP/IP, FTP, TELNET, SMTP, HTTP, HTTPS, POP3."
+},
+{
+"id": "cs-oop",
+"name": "C++: OOP concepts",
+"tags": [
+"CP.oop"
+],
+"syl": "Object, class, encapsulation, data hiding/abstraction, inheritance/reusability, polymorphism/overloading."
+},
+{
+"id": "cs-cpp",
+"name": "C++: data types, loops, arrays and structures",
+"tags": [
+"CP.bas",
+"CP.arr"
+],
+"syl": "Data types, operators and expressions, control statements and loops. Arrays (1D and 2D) and structures: structure variables, array of structures, passing structure members to functions."
+},
+{
+"id": "cs-cls",
+"name": "C++: classes, friend, constructors",
+"tags": [
+"CP.cls",
+"CP.ctor"
+],
+"syl": "Class declaration, data members and member functions, private and public members, functions inside and outside the class, nesting member functions, scope resolution (::) operator, arrays in a class, friend function, constructor and destructor."
+},
+{
+"id": "cs-inh",
+"name": "C++: inheritance",
+"tags": [
+"CP.inh"
+],
+"syl": "Base class, derived class, visibility modes, types of inheritance."
+},
+{
+"id": "cs-ds",
+"name": "Data structures",
+"tags": [
+"DS.stk",
+"DS.srt",
+"DS.tree"
+],
+"syl": "Data, data item, data structure, stack (push and pop), linear queue (insertion and deletion), array sorting. Past papers also ask trees and graphs."
+},
+{
+"id": "cs-ped",
+"name": "Teaching of computer science",
+"tags": [
+"PD.cs"
+],
+"syl": "Subject related pedagogy."
+}
+]
+}
+]
+},
+{
+"id": "cdp",
+"name": "Child Development and Pedagogy",
+"marks": 30,
+"units": [
+{
+"name": "A. Development and assessment",
+"topics": [
+{
+"id": "cdp-dev",
+"name": "Development and learning",
+"tags": [
+"CDP.dev"
+],
+"syl": "Concept of development and its relationship with learning, principles of development, influence of heredity and environment."
+},
+{
+"id": "cdp-soc",
+"name": "Socialisation",
+"tags": [
+"CDP.soc"
+],
+"syl": "Socialisation processes: social world and children (teacher, parents, peers)."
+},
+{
+"id": "cdp-pkv",
+"name": "Piaget, Kohlberg and Vygotsky",
+"tags": [
+"CDP.cog"
+],
+"syl": "Piaget, Kohlberg and Vygotsky: constructs and critical perspectives."
+},
+{
+"id": "cdp-fe",
+"name": "Freud and Erikson, personality",
+"tags": [
+"CDP.psy",
+"CDP.per"
+],
+"syl": "Freud's psychosexual development theory, Erikson's theory of psychosocial development."
+},
+{
+"id": "cdp-ado",
+"name": "Adolescence and mental health",
+"tags": [
+"CDP.ado",
+"CDP.mh"
+],
+"syl": "Psychology of learners aged 14-17 (nature of the test)."
+},
+{
+"id": "cdp-prog",
+"name": "Child-centred and progressive education",
+"tags": [
+"CDP.tch"
+],
+"syl": "Concepts of child-centred and progressive education."
+},
+{
+"id": "cdp-int",
+"name": "Intelligence",
+"tags": [
+"CDP.int"
+],
+"syl": "Critical perspective of the construct of intelligence, multi-dimensional intelligence."
+},
+{
+"id": "cdp-gen",
+"name": "Language, thought and gender",
+"tags": [],
+"syl": "Language and thought. Gender as a social construct; gender roles, gender bias and educational practice."
+},
+{
+"id": "cdp-ind",
+"name": "Individual differences",
+"tags": [
+"CDP.ind"
+],
+"syl": "Individual differences among learners, differences based on diversity of language, caste, gender, community, religion etc."
+},
+{
+"id": "cdp-ass",
+"name": "Assessment and CCE",
+"tags": [
+"CDP.ass"
+],
+"syl": "Assessment for learning and assessment of learning, school-based assessment, continuous and comprehensive evaluation. Framing questions to assess readiness, enhance learning and critical thinking, and assess achievement."
+}
+]
+},
+{
+"name": "B. Inclusive education, learning and pedagogy",
+"topics": [
+{
+"id": "cdp-inc",
+"name": "Inclusive education and special needs",
+"tags": [
+"CDP.inc",
+"CDP.cre"
+],
+"syl": "Inclusive education, children with special needs, learners from disadvantaged and deprived backgrounds, learning difficulties and impairment, talented, creative and specially abled learners."
+},
+{
+"id": "cdp-lrn",
+"name": "How children learn",
+"tags": [
+"CDP.lrn",
+"CDP.mem"
+],
+"syl": "How children think and learn; why children fail in school. Basic processes of teaching and learning, children's learning strategies, learning as a social activity. Child as a problem solver and scientific investigator. Alternative conceptions, children's errors as steps in learning. Bandura's social learning."
+},
+{
+"id": "cdp-mot",
+"name": "Cognition, emotion and motivation",
+"tags": [
+"CDP.mot"
+],
+"syl": "Cognition and emotions. Motivation and learning. Personal and environmental factors in learning."
+},
+{
+"id": "cdp-psyc",
+"name": "Psychology basics and methods",
+"tags": [
+"CDP.psyc"
+],
+"syl": "Not listed by name; asked in past papers."
+}
+]
+}
+]
+},
+{
+"id": "hin",
+"name": "Hindi",
+"marks": 15,
+"units": [
+{
+"name": "आधिकारिक पाठ्यक्रम (Official syllabus)",
+"topics": [
+{
+"id": "hin-pas",
+"name": "अपठित गद्यांश / पद्यांश",
+"tags": [
+"HIN.pas"
+],
+"syl": "One unseen passage (prose, drama or poem) with questions on comprehension, inference, grammar and verbal ability."
+},
+{
+"id": "hin-ped",
+"name": "हिन्दी शिक्षण",
+"tags": [
+"HIN.ped"
+],
+"syl": "Learning and acquisition, principles of language teaching, role of listening and speaking, function of language, role of grammar, challenges of a diverse classroom, language difficulties, errors and disorders, language skills, teaching-learning materials (textbook, multimedia, multilingual resources)."
+}
+]
+},
+{
+"name": "वर्ण और शब्द-रचना (Grammar and verbal ability)",
+"topics": [
+{
+"id": "hin-var",
+"name": "वर्ण विचार",
+"tags": [
+"HIN.var"
+],
+"syl": "Grammar and verbal ability: वर्ण, स्वर, व्यंजन, उच्चारण स्थान."
+},
+{
+"id": "hin-spe",
+"name": "वर्तनी (मानक हिन्दी)",
+"tags": [
+"HIN.spe"
+],
+"syl": "Grammar and verbal ability: शुद्ध वर्तनी, मानक हिन्दी."
+},
+{
+"id": "hin-san",
+"name": "सन्धि",
+"tags": [
+"HIN.san"
+],
+"syl": "Grammar and verbal ability: स्वर, व्यंजन और विसर्ग सन्धि."
+},
+{
+"id": "hin-sam",
+"name": "समास",
+"tags": [
+"HIN.sam"
+],
+"syl": "Grammar and verbal ability: समास के भेद, समास-विग्रह."
+},
+{
+"id": "hin-upa",
+"name": "उपसर्ग और प्रत्यय",
+"tags": [
+"HIN.upa"
+],
+"syl": "Grammar and verbal ability: शब्द-निर्माण."
+}
+]
+},
+{
+"name": "शब्द भेद (Parts of speech)",
+"topics": [
+{
+"id": "hin-noun",
+"name": "संज्ञा, लिंग, वचन, कारक",
+"tags": [
+"HIN.noun"
+],
+"syl": "Grammar and verbal ability."
+},
+{
+"id": "hin-pron",
+"name": "सर्वनाम",
+"tags": [
+"HIN.pron"
+],
+"syl": "Grammar and verbal ability."
+},
+{
+"id": "hin-adj",
+"name": "विशेषण",
+"tags": [
+"HIN.adj"
+],
+"syl": "Grammar and verbal ability."
+},
+{
+"id": "hin-verb",
+"name": "क्रिया, काल, वाच्य, अव्यय",
+"tags": [
+"HIN.verb"
+],
+"syl": "Grammar and verbal ability."
+}
+]
+},
+{
+"name": "शब्द ज्ञान और वाक्य (Vocabulary and sentences)",
+"topics": [
+{
+"id": "hin-voc",
+"name": "शब्द ज्ञान: पर्याय, विलोम, एक शब्द",
+"tags": [
+"HIN.voc"
+],
+"syl": "Verbal ability: पर्यायवाची, विलोम, अनेक शब्दों के लिए एक शब्द, शब्द-युग्म."
+},
+{
+"id": "hin-idi",
+"name": "मुहावरे और लोकोक्तियाँ",
+"tags": [
+"HIN.idi"
+],
+"syl": "Verbal ability."
+},
+{
+"id": "hin-sent",
+"name": "वाक्य",
+"tags": [
+"HIN.sent"
+],
+"syl": "Grammar and verbal ability: वाक्य के भेद, वाक्य शुद्धि."
+}
+]
+}
+]
+},
+{
+"id": "eng",
+"name": "English",
+"marks": 15,
+"units": [
+{
+"name": "Official syllabus",
+"topics": [
+{
+"id": "eng-com",
+"name": "Unseen passage",
+"tags": [
+"ENG.com"
+],
+"syl": "One unseen prose passage (discursive, literary, narrative or scientific) with questions on comprehension, grammar and verbal ability."
+},
+{
+"id": "eng-ped",
+"name": "English teaching",
+"tags": [
+"ENG.ped"
+],
+"syl": "Learning and acquisition, principles of language teaching, listening and speaking, role of grammar, teaching a diverse classroom, language difficulties and errors, language skills, teaching-learning materials."
+}
+]
+},
+{
+"name": "Grammar asked in past papers",
+"topics": [
+{
+"id": "eng-gram",
+"name": "Grammar",
+"tags": [
+"ENG.tense",
+"ENG.art",
+"ENG.pos",
+"ENG.voice",
+"ENG.sent",
+"ENG.err"
+],
+"syl": "Tenses, articles, prepositions, parts of speech, voice and narration, sentence ordering, error spotting."
+},
+{
+"id": "eng-voc",
+"name": "Vocabulary and idioms",
+"tags": [
+"ENG.voc",
+"ENG.idi"
+],
+"syl": "Synonyms, antonyms, one-word substitution, idioms and phrasal verbs."
+}
+]
+}
+]
+},
+{
+"id": "gk",
+"name": "Haryana GK and Awareness",
+"marks": 10,
+"units": [
+{
+"name": "Official syllabus",
+"topics": [
+{
+"id": "gk-his",
+"name": "History, culture, art and literature",
+"tags": [
+"G.his"
+],
+"syl": "Haryana related history, literature, culture, art and traditions."
+},
+{
+"id": "gk-geo",
+"name": "Geography and environment",
+"tags": [
+"G.geo"
+],
+"syl": "Geography and environment of Haryana."
+},
+{
+"id": "gk-pol",
+"name": "Civics and administration",
+"tags": [
+"G.pol"
+],
+"syl": "Civics of Haryana."
+},
+{
+"id": "gk-sch",
+"name": "Welfare schemes",
+"tags": [
+"G.sch"
+],
+"syl": "Welfare schemes of the Haryana Government."
+},
+{
+"id": "gk-cur",
+"name": "Current affairs, sports and awards",
+"tags": [
+"G.spo"
+],
+"syl": "Haryana current affairs."
+}
+]
+}
+]
+},
+{
+"id": "rea",
+"name": "Reasoning Ability",
+"marks": 10,
+"units": [
+{
+"name": "Official syllabus",
+"topics": [
+{
+"id": "r-ana",
+"name": "Analogy, classification and series",
+"tags": [
+"R.ana",
+"R.ser"
+],
+"syl": "Semantic, symbolic/number and figural analogy, classification and series, Venn diagrams, embedded figures."
+},
+{
+"id": "r-cod",
+"name": "Coding-decoding and word building",
+"tags": [
+"R.cod",
+"R.wor"
+],
+"syl": "Coding and decoding, word building, small and capital letters/numbers coding, indexing, address and date matching."
+},
+{
+"id": "r-rel",
+"name": "Relations, directions, ranking and calendar",
+"tags": [
+"R.blo",
+"R.dir",
+"R.ran",
+"R.cal"
+],
+"syl": "Relationship concepts, space orientation, problem solving, arithmetical reasoning."
+},
+{
+"id": "r-log",
+"name": "Logic and non-verbal reasoning",
+"tags": [],
+"syl": "Statement and conclusion, syllogism, drawing inferences, punched hole and paper folding, figural pattern completion, critical thinking, emotional and social intelligence."
+}
+]
+}
+]
+},
+{
+"id": "qa",
+"name": "Quantitative Aptitude",
+"marks": 10,
+"units": [
+{
+"name": "Official syllabus",
+"topics": [
+{
+"id": "q-num",
+"name": "Numbers and simplification",
+"tags": [
+"Q.num"
+],
+"syl": "Whole numbers, decimals, fractions, relationships between numbers, square roots, elementary surds."
+},
+{
+"id": "q-pct",
+"name": "Percentage, profit-loss and interest",
+"tags": [
+"Q.pct",
+"Q.int"
+],
+"syl": "Percentage, interest, profit and loss, discount."
+},
+{
+"id": "q-rat",
+"name": "Ratio, average, partnership and mixture",
+"tags": [
+"Q.rat"
+],
+"syl": "Ratio and proportion, averages, partnership business, mixture and alligation."
+},
+{
+"id": "q-tim",
+"name": "Time, work and distance",
+"tags": [
+"Q.tim"
+],
+"syl": "Time and distance, time and work."
+},
+{
+"id": "q-alg",
+"name": "Algebra",
+"tags": [
+"Q.alg"
+],
+"syl": "Basic algebraic identities, graphs of linear equations."
+},
+{
+"id": "q-geo",
+"name": "Geometry, mensuration and trigonometry",
+"tags": [
+"Q.geo"
+],
+"syl": "Triangles and their centres, congruence and similarity, circles, chords and tangents, quadrilaterals, regular polygons, prism, cone, cylinder, sphere, hemisphere, cuboid, pyramid, trigonometric ratios, degree and radian, identities, heights and distances."
+},
+{
+"id": "q-di",
+"name": "Data interpretation",
+"tags": [],
+"syl": "Histogram, frequency polygon, bar diagram and pie chart."
+}
+]
+}
+]
+}
+]
+}
