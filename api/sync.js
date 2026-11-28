@@ -1,6 +1,6 @@
-// Cloud sync of finished mocks. One user, one shared key; one MongoDB document per exam.
+// Cloud sync of finished mocks. One user, one shared key; one MongoDB document.
 const {createHash,timingSafeEqual}=require('crypto');
-const EXAMS=['cs','sci','prt'],MAX=5000;
+const ID='cs',MAX=5000;
 const num=Number.isFinite,hash=s=>createHash('sha256').update(String(s)).digest();
 const good=t=>!!t&&num(t.id)&&num(t.date)&&num(t.time)&&typeof t.label==='string'&&Array.isArray(t.ids)&&!!t.ans&&typeof t.ans==='object';
 // union by id; anything saved (or imported: t.at) before the latest "delete all" stays deleted
@@ -17,9 +17,9 @@ const handler=open=>async(req,res)=>{
  if(!key||!process.env.MONGOURL)return res.status(500).json({error:'Sync is not set up on the server'});
  if(!timingSafeEqual(hash(got),hash(key)))return res.status(401).json({error:'Wrong sync key'});
  let b;try{b=req.body}catch(e){}
- if(!b||!EXAMS.includes(b.exam)||!Array.isArray(b.attempts)||b.attempts.length>MAX||!b.attempts.every(good)||!num(b.cleared))return res.status(400).json({error:'Bad request'});
- try{const col=await open(),old=await col.findOne({_id:b.exam}),out=merge(old||{attempts:[]},b);
-  await col.replaceOne({_id:b.exam},out,{upsert:true});res.status(200).json(out)}
+ if(!b||!Array.isArray(b.attempts)||b.attempts.length>MAX||!b.attempts.every(good)||!num(b.cleared))return res.status(400).json({error:'Bad request'});
+ try{const col=await open(),old=await col.findOne({_id:ID}),out=merge(old||{attempts:[]},b);
+  await col.replaceOne({_id:ID},out,{upsert:true});res.status(200).json(out)}
  // ponytail: read then write, no lock; a lost write is re-sent by that device on its next sync
  catch(e){console.error(e);res.status(500).json({error:'Database error'})}};
 module.exports=handler(mongo);

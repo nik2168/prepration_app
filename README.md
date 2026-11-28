@@ -17,9 +17,3 @@ Offline-first exam prep pages. Deployed on Vercel as static files from `public/`
 - Atlas -> Network Access must allow `0.0.0.0/0`, so use a long database password.
 - On each device: Backup tab -> Cloud sync -> enter the `SYNC_KEY`.
 - Checks: `node test/sync.test.js`.
-
-## Subjects in the page
-A Subject dropdown (top of the sidebar, top of every screen on phones) switches between PGT Computer Science, TGT Science and PRT. Each keeps its own saved results (CS keeps the original `htetmock` key; the others use `htetmock-sci` and `htetmock-prt`). The page reloads when you switch.
-- TGT Science and PRT: 2021, 2022, 2023, 2024 (held July 2025), official BSEH final keys, Set A. July 2026 keys are behind a login, so those papers are not included.
-- Data: `htet/exams/text` (auto-extracted PDF text), `htet/exams/fixed` (checked text, overrides), `htet/exams/tags` (topic per question, codes in `TOPICS.txt`), `htet/exams/keys_raw` (answer keys). `htet/exams/run.py` cuts papers from the PDFs in `~/Downloads/HTET`; `htet/build.py` builds all three subjects into `public/index.html`.
-- Left out: PRT 2024 Q51-57 and Q60 (they need a comprehension passage that is not included).

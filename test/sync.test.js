@@ -8,10 +8,10 @@ assert.deepStrictEqual(ids(merge({attempts:[],cleared:20},{attempts:[t(1,10,{at:
  process.env.SYNC_KEY='k';process.env.MONGOURL='x';
  const db={},col={findOne:async q=>db[q._id],replaceOne:async(q,d)=>{db[q._id]=d}};
  const call=async(body,key='k',open=async()=>col,method='POST')=>{let code,out;await handler(open)({method,headers:{authorization:'Bearer '+key},body},{status(c){code=c;return this},json(o){out=o}});return{code,out}};
- const body={exam:'cs',attempts:[t(1,10)],cleared:0};
+ const body={attempts:[t(1,10)],cleared:0};
  assert.strictEqual((await call(body,'k',undefined,'GET')).code,405);
  assert.strictEqual((await call(body,'no')).code,401);
- assert.strictEqual((await call({...body,exam:'zz'})).code,400);
+ assert.strictEqual((await call({...body,cleared:'x'})).code,400);
  assert.strictEqual((await call({...body,attempts:[{}]})).code,400);
  assert.deepStrictEqual(ids((await call(body)).out),[1]);
  assert.deepStrictEqual(ids((await call({...body,attempts:[t(2,20)]})).out),[1,2]);

@@ -59,42 +59,13 @@ REP=repeats(QS,T,MAN_CS,DROP_CS)
 json.dump(dict(qs=QS,rep=REP),open('questions.json','w'),ensure_ascii=False)
 ABOUT_CS="2021 to 2024 use BSEH final keys. 2020 uses BSEH draft keys. July 2026 uses a video instructor's answers, and doubtful ones carry a note. All papers are Set A."
 D_CS=dict(qs=QS,subj=SUBJ,top=TOP,rep=REP,papers=[[2020,'9221','draft'],[2021,'321','final'],[2022,'921','final'],[2023,'1321','final'],[2024,'5321','final'],[2026,'7319','unofficial']])
-D_CS.update(name='PGT Computer Science',lvl='PGT',pick='Computer Science (PGT)',mp='CS: ',ml='Computer Science',ms='CS',mn=60,part=2026,syl=True,date=[2026,11,26,15],when='Level 3 is on 26 December 2026, 3:00 to 5:30 pm.',about=ABOUT_CS)
-# TGT Science and PRT: text in exams/text (PDF) overridden by exams/fixed (checked), tags in exams/tags, official keys in exams/keys_raw
-TOPN={l.split(' ',1)[0]:l.split(' ',1)[1] for l in open('exams/TOPICS.txt',encoding='utf8').read().split('\n') if l and l[0]!='#'}
-def exam(pre,kn,papers,subj,**meta):
-    QSx=[];Tx={};skipped=[]
-    for y,code,key in papers:
-        nm=f'{pre}-{y}';tx=json.load(open(f'exams/text/{nm}.json'));fx=json.load(open(f'exams/fixed/{nm}.json'));tg=json.load(open(f'exams/tags/{nm}.json'));ky=json.load(open(f'exams/keys_raw/{kn}_{y}.json'))
-        assert len(ky)==150 and len(tg)==150,nm
-        for q in range(1,151):
-            e=fx.get(f'{nm}_{q}')
-            if e and e.get('skip'):skipped.append(f'{y}_{q}');continue
-            if e:x,op=e['s'].strip(),[o.strip() for o in e['o']]
-            else:
-                t=re.sub(r'^\d+\.\s*','',tx[f'{nm}_{q}']);m=re.split(r'\s*[\(\[]?\b([1-4])[\)\]]\s+',t)
-                assert len(m)==9 and m[1::2]==['1','2','3','4'],(nm,q)
-                x,op=m[0].strip(),[z.strip() for z in m[2::2]]
-            assert x and len(op)==4 and all(op),(nm,q)
-            a=ky[str(q)]
-            if isinstance(a,int):a=[a]
-            assert a=='*' or (a and all(1<=z<=4 for z in a)),(nm,q)
-            t=tg[str(q)];assert t in TOPN,(nm,q,t)
-            QSx.append(dict(i=f'{y}_{q}',y=y,n=q,t=t,a=a,x=x,o=op));Tx[f'{y}_{q}']=x+' '+' '.join(op)
-    used={q['t'].split('.')[0] for q in QSx}
-    sj={k:v for k,v in {**SUBJ,**subj}.items() if k in used};tp={t:[TOPN[t],False] for t in {q['t'] for q in QSx}}
-    return dict(qs=QSx,subj=sj,top=tp,rep=repeats(QSx,Tx),papers=[[y,c,k] for y,c,k in papers],skipped=skipped,part=0,syl=False,**meta)
-D_SCI=exam('tgt-sci','tgt_science',[(2021,'211','final'),(2022,'811','final'),(2023,'1211','final'),(2024,'5211','final')],{'PHY':'Science: Physics','CHE':'Science: Chemistry','BIO':'Science: Biology','SCI':'Science: Teaching science'},
- name='TGT Science',lvl='TGT',pick='Science (TGT)',mp='Science: ',ml='Science',ms='Sci',mn=60,date=None,when='Level 2 paper, Science.',about="All papers use BSEH final keys, Set A. Topic labels are our own reading. Questions that need a diagram are left out and listed on the paper card.")
-D_PRT=exam('prt','prt',[(2021,'101','final'),(2022,'701','final'),(2023,'1101','final'),(2024,'5101','final')],{'MTH':'Mathematics','EVS':'Environmental Studies'},
- name='PRT (Primary)',lvl='PRT',pick='Primary (PRT)',mp='',ml='',ms='',mn=0,date=None,when='Level 1 paper.',about="All papers use BSEH final keys, Set A. Topic labels are our own reading. Questions that need a diagram are left out and listed on the paper card.")
-X=dict(cs=D_CS,sci=D_SCI,prt=D_PRT)
+D_CS.update(name='PGT Computer Science',lvl='PGT',mp='CS: ',ml='Computer Science',ms='CS',mn=60,part=2026,syl=True,date=[2026,11,26,15],when='Level 3 is on 26 December 2026, 3:00 to 5:30 pm.',about=ABOUT_CS)
 js=lambda o:json.dumps(o,ensure_ascii=False,separators=(',',':')).replace('</','<\\/')
 if os.path.exists('page.html'):
     rd=lambda n:open('src/'+n,encoding='utf8').read()
     font='data:font/woff2;base64,'+base64.b64encode(open('src/lexend-latin.woff2','rb').read()).decode()
     ORDER=['core.js','store.js','app.js','ui.js','home.js','mock.js','view.js','result.js','progress.js','repeats.js','guide.js','data.js']
-    h=rd('../page.html').replace('/*CSS*/',rd('styles.css').replace('__LEXEND__',font)).replace('/*JS*/','\n'.join(rd(n) for n in ORDER)).replace('/*DATA*/','const X='+js(X)+';')
+    h=rd('../page.html').replace('/*CSS*/',rd('styles.css').replace('__LEXEND__',font)).replace('/*JS*/','\n'.join(rd(n) for n in ORDER)).replace('/*DATA*/','const D='+js(D_CS)+';')
     open('../public/index.html','w').write(h); print('page MB',len(h.encode())/1e6)
 print('questions',len(QS),'repeat groups',len(REP))
 if __name__=='__main__' and os.environ.get('SHOW'):

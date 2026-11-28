@@ -1,9 +1,7 @@
 // Saved results. The key and shape must stay as they are so earlier attempts keep loading.
-let U={theme:'light',exam:'cs'};
+let U={theme:'light'};
 try{U=Object.assign(U,JSON.parse(localStorage.getItem('htetmock-ui')||'{}'))}catch(e){}
-if(!X[U.exam])U.exam='cs';
-// X holds every exam; the page reloads when the exam changes, so D and all consts below are for one exam. CS keeps the original key.
-const D=X[U.exam],SK=U.exam==='cs'?'htetmock':'htetmock-'+U.exam,Qm=Object.fromEntries(D.qs.map(q=>[q.i,q]));
+const SK='htetmock',Qm=Object.fromEntries(D.qs.map(q=>[q.i,q]));
 let S={attempts:[],cur:null,pass:60,cleared:0},warned=false;
 try{S=Object.assign(S,JSON.parse(localStorage.getItem(SK)||'{}'))}catch(e){}
 if(!Array.isArray(S.attempts))S.attempts=[];
@@ -14,7 +12,7 @@ function save(){try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){if(!warn
 let syncMsg='';
 async function sync(){if(!U.key||!location.protocol.startsWith('http'))return;
  const sent=new Set(S.attempts.map(t=>t.id)),was=JSON.stringify(S.attempts);
- try{const r=await fetch('/api/sync',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+U.key},body:JSON.stringify({exam:U.exam,attempts:S.attempts,cleared:S.cleared})}),o=await r.json().catch(()=>({}));
+ try{const r=await fetch('/api/sync',{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+U.key},body:JSON.stringify({attempts:S.attempts,cleared:S.cleared})}),o=await r.json().catch(()=>({}));
   if(!r.ok||!Array.isArray(o.attempts))throw Error(o.error||'Server error '+r.status);
   S.cleared=Math.max(S.cleared,o.cleared);
   // keep anything finished while the request was in flight
