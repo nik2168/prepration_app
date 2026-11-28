@@ -11,9 +11,13 @@ ${m.units.map(u=>`<section class="card"><h2 style="margin-bottom:4px">${esc(u.na
 V.revt=()=>{const t=TM[arg],Q=tq(t),G=D.rep.map((g,i)=>[g,i]).filter(([g])=>t.tags.includes(Qm[g[0]].t));
 return `<div class="stack notes-page"><div class="row">${btn(esc(t.m.name),'mod',t.m.id,'l s')}</div><div class="row bet" style="flex-wrap:nowrap;align-items:flex-start"><h1 class="grow">${esc(t.name)}</h1>${tick_(t.id,t.name)}</div>
 <section class="card tint"><p class="sm"><b>Syllabus:</b> ${esc(t.syl)}</p></section>
-<article class="card notes">${D.notes[t.id]||'<p class="mut">Notes for this topic are coming. Practise its past questions meanwhile.</p>'}</article>
+<nav class="toc" aria-label="इस पेज में"></nav><article class="notes">${D.notes[t.id]||'<p class="mut">Notes for this topic are coming. Practise its past questions meanwhile.</p>'}</article>
 <div class="row">${btn(`Practise ${Q.length} past question${Q.length===1?'':'s'}`,'tprac',t.id,'p',!Q.length)}${aiOn()?btn('Ask AI about this topic','aitopic',t.id):''}</div>
 ${G.length?`<section class="card"><h2>Asked again</h2>${G.map(([g,i])=>`<div class="li"><span class="b y" style="width:40px;height:40px">${g.length}×</span><p class="grow sm num">${g.map(x=>Qm[x].y+' Q'+Qm[x].n).join(', ')}</p>${btn('Try','grp',i,'s')}</div>`).join('')}</section>`:''}</div>`};
+// contents line from the page's own h2 headings
+A.revt=()=>{const hs=[...document.querySelectorAll('.notes h2')],n=$('.toc');if(hs.length<3){n.remove();return}
+ n.innerHTML='<b>इस पेज में</b>'+hs.map((h,i)=>{h.id='s'+i;return `<a href="#s${i}">${esc(h.textContent)}</a>`}).join('');
+ n.onclick=e=>{const a=e.target.closest('a');if(a){e.preventDefault();document.getElementById(a.hash.slice(1)).scrollIntoView({behavior:'smooth'})}}};
 Object.assign(act,{rev(){go('rev')},mod(v){go('revs',v)},topen(v){go('revt',v)},
 tdone(v){S.done[v]=isDone(v)?-Date.now():Date.now();save();render();sync()},
 tprac(v){const t=TM[v];prac(shuf(tq(t)).map(q=>q.i),'Practice: '+t.name)}});
