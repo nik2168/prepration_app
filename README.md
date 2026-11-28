@@ -26,4 +26,4 @@ Offline-first exam prep pages. Deployed on Vercel as static files from `public/`
 
 ## AI help
 `api/ai.js` answers "Ask AI" (under any shown answer, and on Revise topics) through Gemini `generateContent`, using the same `SYNC_KEY` for access.
-- Variables: `GEMINI_KEY` (free at aistudio.google.com), optional `GEMINI_MODEL` (default `gemini-3.6-flash`).
+- Variables: `GEMINI_API_KEY` (free at aistudio.google.com; `GEMINI_KEY` also works), optional `GEMINI_MODEL` (default `gemini-3.6-flash`).
